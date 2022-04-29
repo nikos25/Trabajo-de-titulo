@@ -1,0 +1,24 @@
+.container .row .col img{
+    width: 380px;
+    height: 380px;
+}
+
+.container .col h1{
+    font-size: 72px;
+}
+
+.parrafo{
+    position: relative;
+    top: -150px;
+    
+}
+
+.logo{
+    position: relative;
+    top: 50px;
+}
+
+.rrss{
+    position: relative;
+    top: 60px;
+}
