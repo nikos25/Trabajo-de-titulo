@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controller\{loginController, registroController, generalController, CatalogoController,
-     NoticiasController, PatrocinadoresController, VideosController};
+     NoticiasController, PatrocinadoresController, VideosController, ChatController};
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +32,5 @@ Route::get('/Videos', [App\Http\Controllers\VideosController::class, 'video'])->
 Route::get('/Noticias', [App\Http\Controllers\NoticiasController::class, 'noticia'])->name('noticia');
 
 Route::get('/Patrocinadores', [App\Http\Controllers\PatrocinadoresController::class, 'patro'])->name('patro');
+
+Route::get('/Chat', [App\Http\Controllers\ChatController::class, 'chat'])->name('chat');

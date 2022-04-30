@@ -28,25 +28,25 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{route('index')}}">Inicio</a>
+                    <a class="nav-link" href="<?php echo e(route('index')); ?>">Inicio</a>
                 </li>
                 <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="" id="btn-catalogo" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Catalogo
                     </a>
                     <div class="dropdown-menu" aria-labelledby="btn-catalogo">
-                        <a class="dropdown-item" href="{{route('fotos')}}">Fotografias</a>
-                        <a class="dropdown-item" href="{{route('video')}}">Videos</a>
+                        <a class="dropdown-item" href="<?php echo e(route('fotos')); ?>">Fotografias</a>
+                        <a class="dropdown-item" href="<?php echo e(route('video')); ?>">Videos</a>
                     </div>
                 </li>
                 <li class="nav-item active" href="">
-                    <a class="nav-link" href="{{route('chat')}}">Chat</a>
+                    <a class="nav-link" href="<?php echo e(route('chat')); ?>">Chat</a>
                 </li>
                 <li class="nav-item active" href="">
-                    <a class="nav-link" href="{{route('noticia')}}">Noticias</a>
+                    <a class="nav-link" href="<?php echo e(route('noticia')); ?>">Noticias</a>
                 </li>
                 <li class="nav-item active" href="">
-                    <a class="nav-link" href="{{route('patro')}}">Patrocinadores</a>
+                    <a class="nav-link" href="<?php echo e(route('patro')); ?>">Patrocinadores</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -55,16 +55,16 @@
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                   </form>
                 <li class="nav-item active" href="">
-                    <a class="nav-link" href="{{route('login')}}">iniciar sesion</a>
+                    <a class="nav-link" href="<?php echo e(route('login')); ?>">iniciar sesion</a>
                 </li>
                 <li class="nav-item active" href="">
-                    <a class="nav-link" href="{{route('registro')}}">registrarse</a>
+                    <a class="nav-link" href="<?php echo e(route('registro')); ?>">registrarse</a>
                 </li>
             </ul>
         </div>
     </nav> 
     <div class="p-2">
-        @yield('contenido-principal')
+        <?php echo $__env->yieldContent('contenido-principal'); ?>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -73,4 +73,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
 </body>
-</html>
+</html><?php /**PATH C:\Users\seba1\OneDrive\Escritorio\Trabajo-de-titulo\resources\views/welcome.blade.php ENDPATH**/ ?>
