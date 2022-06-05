@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{route('index')}}">Inicio</a>
+                    <a class="nav-link" href="{{route('inicio')}}">Inicio</a>
                 </li>
                 <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="" id="btn-catalogo" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -53,13 +53,19 @@
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Busqueda">
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
-                  </form>
-                <li class="nav-item active" href="">
-                    <a class="nav-link" href="{{route('login')}}">iniciar sesion</a>
-                </li>
-                <li class="nav-item active" href="">
-                    <a class="nav-link" href="{{route('registro')}}">registrarse</a>
-                </li>
+                </form>
+                @if ( Auth::check() )
+                    <li class="nav-item active" href="">
+                        <a class="nav-link" href="{{route('perfil')}}">Perfil</a>
+                    </li>
+                @else
+                    <li class="nav-item active" href="">
+                        <a class="nav-link" href="{{route('index')}}">iniciar sesion</a>
+                    </li>
+                    <li class="nav-item active" href="">
+                        <a class="nav-link" href="{{route('registro')}}">registrarse</a>
+                    </li>
+                @endif
             </ul>
         </div>
     </nav> 

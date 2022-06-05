@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controller\{loginController, registroController, generalController, CatalogoController,
-     NoticiasController, PatrocinadoresController, VideosController, ChatController};
+use App\Http\Controller\{UsuariosController, generalController, CatalogoController,
+     NoticiasController, PatrocinadoresController, VideosController, ChatController, PerfilController, 
+     RegistroController};
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +19,13 @@ use App\Http\Controller\{loginController, registroController, generalController,
 Route::get('/', function () {
     return view('general.index');
 });
-Route::get('/iniciosesion', [App\Http\Controllers\loginController::class, 'login'])->name('login');
+Route::get('/InicioSesion/logout', [App\Http\Controllers\UsuariosController::class, 'logout'])->name('logout');
+Route::get('/InicioSesion', [App\Http\Controllers\UsuariosController::class, 'index'])->name('index');
+Route::post('/InicioSesion', [App\Http\Controllers\UsuariosController::class, 'login'])->name('login');
+Route::get('/Registrar', [App\Http\Controllers\UsuariosController::class, 'registro'])->name('registro');
+Route::post('/Registrar', [App\Http\Controllers\UsuariosController::class, 'store'])->name('registro.store');
 
-Route::get('/registrar', [App\Http\Controllers\registroController::class, 'registro'])->name('registro');
-Route::post('/registrar', [App\Http\Controllers\registroController::class, 'store'])->name('registro.store');
-
-Route::get('/bienvenido', [App\Http\Controllers\generalController::class, 'inicio'])->name('index');
+Route::get('/Bienvenido', [App\Http\Controllers\generalController::class, 'inicio'])->name('inicio');
 
 Route::get('/Catalogo', [App\Http\Controllers\CatalogoController::class, 'fotos'])->name('fotos');
 
@@ -34,3 +36,5 @@ Route::get('/Noticias', [App\Http\Controllers\NoticiasController::class, 'notici
 Route::get('/Patrocinadores', [App\Http\Controllers\PatrocinadoresController::class, 'patro'])->name('patro');
 
 Route::get('/Chat', [App\Http\Controllers\ChatController::class, 'chat'])->name('chat');
+
+Route::get('/Perfil', [App\Http\Controllers\PerfilController::class, 'perfil'])->name('perfil');
