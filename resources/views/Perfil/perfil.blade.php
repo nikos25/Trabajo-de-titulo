@@ -15,10 +15,10 @@
                         <h5>{{Auth::user()->Email}}</h5>
                     </div>
                     @if (Auth::user()->rol_id == 1)
-                        <a href="{{route('registro')}}">Crear administrador</a>
+                        <a href="{{route('registro')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Crear administrador</a>
                     @endif
                     <br>
-                    <a href="{{route('logout')}}">Cerrar sesion</a>
+                        <a href="{{route('registro')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Cerrar sesion</a>
                 </div>
             </div>
         </div>

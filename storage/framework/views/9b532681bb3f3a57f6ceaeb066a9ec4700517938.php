@@ -15,10 +15,10 @@
                         <h5><?php echo e(Auth::user()->Email); ?></h5>
                     </div>
                     <?php if(Auth::user()->rol_id == 1): ?>
-                        <a href="<?php echo e(route('registro')); ?>">Crear administrador</a>
+                        <a href="<?php echo e(route('registro')); ?>" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Crear administrador</a>
                     <?php endif; ?>
                     <br>
-                    <a href="<?php echo e(route('logout')); ?>">Cerrar sesion</a>
+                        <a href="<?php echo e(route('registro')); ?>" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Cerrar sesion</a>
                 </div>
             </div>
         </div>
