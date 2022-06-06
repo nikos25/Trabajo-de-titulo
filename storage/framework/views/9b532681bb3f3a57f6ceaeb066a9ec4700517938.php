@@ -14,6 +14,10 @@
                     <div class="col-12 forgot">
                         <h5><?php echo e(Auth::user()->Email); ?></h5>
                     </div>
+                    <?php if(Auth::user()->rol_id == 1): ?>
+                        <a href="<?php echo e(route('registro')); ?>">Crear administrador</a>
+                    <?php endif; ?>
+                    <br>
                     <a href="<?php echo e(route('logout')); ?>">Cerrar sesion</a>
                 </div>
             </div>

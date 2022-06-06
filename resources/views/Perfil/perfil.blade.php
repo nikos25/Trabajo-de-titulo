@@ -14,6 +14,10 @@
                     <div class="col-12 forgot">
                         <h5>{{Auth::user()->Email}}</h5>
                     </div>
+                    @if (Auth::user()->rol_id == 1)
+                        <a href="{{route('registro')}}">Crear administrador</a>
+                    @endif
+                    <br>
                     <a href="{{route('logout')}}">Cerrar sesion</a>
                 </div>
             </div>

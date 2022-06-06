@@ -23,7 +23,8 @@
                     <div class="form-group" id="pass-group">
                         <input type="password" class="form-control" placeholder="Contraseña" name="password">
                     </div>
-                   
+                    
+                    
                     <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i>  Registrarse</button>
                 </form>
                 <div class="col-12 forgot">
