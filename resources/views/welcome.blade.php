@@ -35,7 +35,7 @@
                         Catalogo
                     </a>
                     <div class="dropdown-menu" aria-labelledby="btn-catalogo">
-                        <a class="dropdown-item" href="{{route('fotos')}}">Fotografias</a>
+                        <a class="dropdown-item" href="{{route('catalogo')}}">Fotografias</a>
                         <a class="dropdown-item" href="{{route('video')}}">Videos</a>
                     </div>
                 </li>

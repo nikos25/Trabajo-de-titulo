@@ -35,7 +35,7 @@
                         Catalogo
                     </a>
                     <div class="dropdown-menu" aria-labelledby="btn-catalogo">
-                        <a class="dropdown-item" href="<?php echo e(route('fotos')); ?>">Fotografias</a>
+                        <a class="dropdown-item" href="<?php echo e(route('catalogo')); ?>">Fotografias</a>
                         <a class="dropdown-item" href="<?php echo e(route('video')); ?>">Videos</a>
                     </div>
                 </li>

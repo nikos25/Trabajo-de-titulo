@@ -1,8 +1,8 @@
 @extends('welcome')
 @section('contenido-principal')
-@if(Auth::user()->rol_id == 1)
-dd("funcionando");
+{{--  @if(Auth::user()->rol_id == 1)
+
 @else
 dd('aqui va la lista');
-@endif
+@endif  --}}
 @endsection

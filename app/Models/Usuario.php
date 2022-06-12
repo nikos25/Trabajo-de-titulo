@@ -19,6 +19,8 @@ class Usuario extends Authenticatable
         return $this->belongsTo('App\Models\Rol');
     }
 
+    
+
     /**
      * The attributes that are mass assignable.
      *

@@ -27,7 +27,7 @@ Route::post('/Registrar', [App\Http\Controllers\UsuariosController::class, 'stor
 
 Route::get('/Bienvenido', [App\Http\Controllers\generalController::class, 'inicio'])->name('inicio');
 
-Route::get('/Catalogo', [App\Http\Controllers\CatalogoController::class, 'fotos'])->name('fotos');
+Route::get('/Catalogo', [App\Http\Controllers\CatalogoController::class, 'catalogo'])->name('catalogo');
 
 Route::get('/Videos', [App\Http\Controllers\VideosController::class, 'video'])->name('video');
 

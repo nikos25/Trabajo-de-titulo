@@ -46,7 +46,7 @@ class UsuariosController extends Controller
          $usuario->Nombre = $request->nombre;
          $usuario->Apellido = $request->apellido;
          $usuario->nombre_usuario = $request->nomUsuario;
-         $usuario->rol_id = $request->rol;
+         $usuario->rol_id = 2;
          $usuario->save();
          return redirect()->route('registro');
     }

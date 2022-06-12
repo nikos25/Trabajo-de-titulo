@@ -6,19 +6,20 @@
                 <div class="col-12 user-image">
                     <img src="images\usuario.png">
                     <div class="col-12 forgot">
-                        <h5><?php echo e(Auth::user()->nombre_usuario); ?></h5>
+                        <h5>Usuario: <?php echo e(Auth::user()->nombre_usuario); ?></h5>
                     </div>
                     <div class="col-12 forgot">
-                        <h5><?php echo e(Auth::user()->Nombre); ?> <?php echo e(Auth::user()->Apellido); ?></h5>
+                        <h5>Nombre: <?php echo e(Auth::user()->Nombre); ?> <?php echo e(Auth::user()->Apellido); ?></h5>
                     </div>
                     <div class="col-12 forgot">
-                        <h5><?php echo e(Auth::user()->Email); ?></h5>
+                        <h5>Email: <?php echo e(Auth::user()->Email); ?></h5>
                     </div>
                     <?php if(Auth::user()->rol_id == 1): ?>
                         <a href="<?php echo e(route('registro')); ?>" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Crear administrador</a>
+                        <br>
+                        <br>
                     <?php endif; ?>
-                    <br>
-                        <a href="<?php echo e(route('registro')); ?>" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Cerrar sesion</a>
+                    <a href="<?php echo e(route('logout')); ?>" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Cerrar sesion</a>
                 </div>
             </div>
         </div>
