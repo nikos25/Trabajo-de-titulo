@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             <div class="col rrss">
-                <p> <a href="https://www.instagram.com/animalitos.vregion/">Animalitos.Vregion</a></p>
+                <a href="https://www.instagram.com/animalitos.vregion/" class="btn  " role="button" aria-pressed="true"><i class="fab fa-instagram"></i> Animalitos.Vregion</a>
             </div>
             <div class="col parrafo">
                 <p>

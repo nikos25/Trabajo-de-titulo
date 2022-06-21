@@ -2,28 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Catalogo;
 use App\Models\Especie;
 use Illuminate\Http\Request;
-use ReflectionFunctionAbstract;
 
-class CatalogoController extends Controller
+class EspecieController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct() {
-        $this->middleware('auth')->except('login');
+
+    public function Especie(){
+        return view('Catalogo.CrearEspecie');
     }
 
-
-    public function catalogo(){
-        $especies = Especie::all();
-        return view('Catalogo.catalogo', compact('especies'));
-    }
-    
     public function index()
     {
         //
@@ -47,16 +40,19 @@ class CatalogoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $especie = new Especie();
+        $especie->nom_especie = $request->Especie;
+        $especie->save();
+        return redirect()->route('crearEspecie');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Catalogo  $catalogo
+     * @param  \App\Models\Especie  $especie
      * @return \Illuminate\Http\Response
      */
-    public function show(Catalogo $catalogo)
+    public function show(Especie $especie)
     {
         //
     }
@@ -64,10 +60,10 @@ class CatalogoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Catalogo  $catalogo
+     * @param  \App\Models\Especie  $especie
      * @return \Illuminate\Http\Response
      */
-    public function edit(Catalogo $catalogo)
+    public function edit(Especie $especie)
     {
         //
     }
@@ -76,10 +72,10 @@ class CatalogoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Catalogo  $catalogo
+     * @param  \App\Models\Especie  $especie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Catalogo $catalogo)
+    public function update(Request $request, Especie $especie)
     {
         //
     }
@@ -87,10 +83,10 @@ class CatalogoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Catalogo  $catalogo
+     * @param  \App\Models\Especie  $especie
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Catalogo $catalogo)
+    public function destroy(Especie $especie)
     {
         //
     }

@@ -19,7 +19,7 @@ class CreateNoticiasTable extends Migration
             $table->foreign('id_admin')->references('id')->on('usuarios');
             $table->string('titulo', 25);
             $table->string('descripcion', 200);
-            $table->dateTime('fecha');
+            $table->date('fecha');
             $table->timestamps();
         });
     }

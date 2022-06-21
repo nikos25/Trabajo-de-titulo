@@ -17,10 +17,10 @@ class CreateComprasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_usuario');
             $table->foreign('id_usuario')->references('id')->on('usuarios');
-            $table->Integer('valor')->unsigned();
-            $table->dateTime('fecha');
             $table->unsignedBigInteger('id_foto');
             $table->foreign('id_foto')->references('id')->on('fotografias');
+            $table->Integer('valor')->unsigned();
+            $table->dateTime('fecha');
             $table->timestamps();
         });
     }

@@ -10,5 +10,7 @@ class Fotofrafia extends Model
     use HasFactory;
     protected $table = 'fotografias';
 
-
+    public function especie(){
+        return $this->belongsTo('App\Models\Especie');
+    }
 }

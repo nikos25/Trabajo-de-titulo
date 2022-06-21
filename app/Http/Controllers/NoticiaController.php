@@ -2,28 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Catalogo;
-use App\Models\Especie;
+use App\Models\Noticia;
 use Illuminate\Http\Request;
-use ReflectionFunctionAbstract;
+use Illuminate\Support\Facades\Auth;
 
-class CatalogoController extends Controller
+class NoticiaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function __construct() {
         $this->middleware('auth')->except('login');
     }
-
-
-    public function catalogo(){
-        $especies = Especie::all();
-        return view('Catalogo.catalogo', compact('especies'));
-    }
     
+    public function noticia(){
+        $noticias = Noticia::all();
+        return view('Noticias.noticia', compact('noticias'));
+    }
+
     public function index()
     {
         //
@@ -47,16 +46,16 @@ class CatalogoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Catalogo  $catalogo
+     * @param  \App\Models\Noticia  $noticia
      * @return \Illuminate\Http\Response
      */
-    public function show(Catalogo $catalogo)
+    public function show(Noticia $noticia)
     {
         //
     }
@@ -64,10 +63,10 @@ class CatalogoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Catalogo  $catalogo
+     * @param  \App\Models\Noticia  $noticia
      * @return \Illuminate\Http\Response
      */
-    public function edit(Catalogo $catalogo)
+    public function edit(Noticia $noticia)
     {
         //
     }
@@ -76,10 +75,10 @@ class CatalogoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Catalogo  $catalogo
+     * @param  \App\Models\Noticia  $noticia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Catalogo $catalogo)
+    public function update(Request $request, Noticia $noticia)
     {
         //
     }
@@ -87,10 +86,10 @@ class CatalogoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Catalogo  $catalogo
+     * @param  \App\Models\Noticia  $noticia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Catalogo $catalogo)
+    public function destroy(Noticia $noticia)
     {
         //
     }

@@ -19,7 +19,9 @@ class Usuario extends Authenticatable
         return $this->belongsTo('App\Models\Rol');
     }
 
-    
+    public function noticia(){
+        return $this->belongsTo('App\Models\Noticia');
+    }
 
     /**
      * The attributes that are mass assignable.

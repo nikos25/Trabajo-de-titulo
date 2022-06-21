@@ -25,7 +25,7 @@ body{
 .modal-content{
     background-color: teal;
     opacity: .85;
-    
+
 }
 .user-image{
     margin-top: -50px;
@@ -64,8 +64,8 @@ body{
     content: "\f1fa";
 }
 
-.form-group#edad-group::before{
-    content: "\f073";
+.form-group#noticia-group::before{
+    content: "\f1ea";
 }
 
 .forgot{
