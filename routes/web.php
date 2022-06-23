@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controller\{UsuariosController, generalController, CatalogoController,
      NoticiaController, PatrocinadoresController, VideosController, ChatController, PerfilController, 
-     RegistroController, EspecieController, CrearNoticaController};
+     RegistroController, EspecieController, CrearNoticaController, FotografiasController,
+     CrearFotografiasController};
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ Route::post('/Registrar', [App\Http\Controllers\UsuariosController::class, 'stor
 Route::get('/Bienvenido', [App\Http\Controllers\generalController::class, 'inicio'])->name('inicio');
 
 Route::get('/Catalogo', [App\Http\Controllers\CatalogoController::class, 'catalogo'])->name('catalogo');
+Route::get('/Fotografias', [App\Http\Controllers\FotografiasController::class, 'fotografia'])->name('fotografia');
+Route::get('/CrearFotografias', [App\Http\Controllers\CrearFotografiasController::class, 'crearFotografia'])->name('crearFotografia');
 
 Route::get('/Especie', [App\Http\Controllers\EspecieController::class, 'Especie'])->name('Especie');
 Route::post('/Especie', [App\Http\Controllers\EspecieController::class, 'store'])->name('crearEspecie');

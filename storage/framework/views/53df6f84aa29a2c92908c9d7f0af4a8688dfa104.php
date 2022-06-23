@@ -21,7 +21,7 @@
                 <tr>
                 <td><?php echo e($num + 1); ?></td>
                 <td><?php echo e($especie->nom_especie); ?></td>
-                <td><a href="#" class="btn btn-secondary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Ver</a></td>
+                <td><a href="<?php echo e(route('fotografia')); ?>" class="btn btn-secondary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Ver</a></td>
                 </tr>
             </tbody>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

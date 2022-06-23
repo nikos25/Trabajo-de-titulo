@@ -21,7 +21,7 @@
                 <tr>
                 <td>{{$num + 1}}</td>
                 <td>{{$especie->nom_especie}}</td>
-                <td><a href="#" class="btn btn-secondary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Ver</a></td>
+                <td><a href="{{route('fotografia')}}" class="btn btn-secondary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Ver</a></td>
                 </tr>
             </tbody>
         @endforeach

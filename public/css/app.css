@@ -68,6 +68,18 @@ body{
     content: "\f1ea";
 }
 
+.form-group#image-group::before{
+    content: "\f302";
+}
+
+.form-group#valor-group::before{
+    content: "\f155";
+}
+
+.form-group#descripcion-group::before{
+    content: "\f044";
+}
+
 .forgot{
     padding: 5px 0;
 }
