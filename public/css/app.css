@@ -80,6 +80,10 @@ body{
     content: "\f044";
 }
 
+.form-group#rrss-group::before{
+    content: "\f0ac";
+}
+
 .forgot{
     padding: 5px 0;
 }

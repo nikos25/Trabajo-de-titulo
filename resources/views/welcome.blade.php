@@ -40,9 +40,6 @@
                     </div>
                 </li>
                 <li class="nav-item active" href="">
-                    <a class="nav-link" href="{{route('chat')}}">Chat</a>
-                </li>
-                <li class="nav-item active" href="">
                     <a class="nav-link" href="{{route('noticia')}}">Noticias</a>
                 </li>
                 <li class="nav-item active" href="">
@@ -50,10 +47,6 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Busqueda" aria-label="Busqueda">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
                 @if ( Auth::check() )
                     <li class="nav-item active" href="">
                         <a class="nav-link" href="{{route('perfil')}}">Perfil</a>

@@ -1,10 +1,13 @@
 
 <?php $__env->startSection('contenido-principal'); ?>
     <div class="container">
-        <div class="row" align = "center">
+        <div class="column">
+          <div class="row" align = "center">
             <?php if(Auth::user()->rol_id == 1): ?>
             <a href="<?php echo e(route('crearEspecie')); ?>" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-edit"></i> Crear especie</a>
+            <a href="<?php echo e(route('crearFotografia')); ?>" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-edit"></i> Crear fotografia</a>
             <?php endif; ?>
+          </div>
         </div>
     </div>
     <br>

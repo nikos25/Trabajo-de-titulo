@@ -7,6 +7,6 @@
         <?php endif; ?>
     </div>
 </div>
-<br>
+dd(<?php echo e($especie->id); ?>);
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('welcome', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\seba1\OneDrive\Escritorio\Trabajo de titulo\Animalitos V\Trabajo-de-titulo\resources\views/Catalogo/fotografia.blade.php ENDPATH**/ ?>

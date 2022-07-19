@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controller\{UsuariosController, generalController, CatalogoController,
      NoticiaController, PatrocinadoresController, VideosController, ChatController, PerfilController, 
      RegistroController, EspecieController, CrearNoticaController, FotografiasController,
-     CrearFotografiasController};
+     CrearFotografiasController, CrearPatroController};
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +42,8 @@ Route::get('/CrearNoticias', [App\Http\Controllers\CrearNoticaController::class,
 Route::post('/CrearNoticias', [App\Http\Controllers\CrearNoticaController::class, 'store'])->name('NoticiaPost');
 
 Route::get('/Patrocinadores', [App\Http\Controllers\PatrocinadoresController::class, 'patro'])->name('patro');
+Route::get('/CrearPatrocinador', [App\Http\Controllers\CrearPatroController::class, 'crearPatrocinador'])->name('crearPatrocinador');
+Route::post('/CrearPatrocinador', [App\Http\Controllers\CrearPatroController::class, 'store'])->name('patrocinador.store');
 
 Route::get('/Chat', [App\Http\Controllers\ChatController::class, 'chat'])->name('chat');
 
