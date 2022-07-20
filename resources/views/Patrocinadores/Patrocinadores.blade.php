@@ -21,10 +21,10 @@
             <h6>{{$patrocinadores -> descripcion}}</h6>
           </div>
           <div class="row div-contenido">
-            <h6>{{$patrocinadores -> facebook}}</h6>
+            <h6><a href="{{$patrocinadores -> facebook}}">Facebook</a></h6>
           </div>
           <div class="row div-contenido">
-            <h6>{{$patrocinadores -> instagram}}</h6>
+            <h6><a href="{{$patrocinadores -> instagram}}">Instagram</a></h6>
           </div>
           <div class="row div-contenido">
             <h6>{{$patrocinadores -> email}}</h6>

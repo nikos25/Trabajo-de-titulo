@@ -12,6 +12,9 @@ class VideoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct() {
+        $this->middleware('auth')->except('login');
+    }
 
     public function video(){
         return view('Catalogo.videos');

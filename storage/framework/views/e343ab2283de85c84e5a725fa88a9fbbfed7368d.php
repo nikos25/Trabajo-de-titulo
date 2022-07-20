@@ -21,10 +21,10 @@
             <h6><?php echo e($patrocinadores -> descripcion); ?></h6>
           </div>
           <div class="row div-contenido">
-            <h6><?php echo e($patrocinadores -> facebook); ?></h6>
+            <h6><a href="<?php echo e($patrocinadores -> facebook); ?>">Facebook</a></h6>
           </div>
           <div class="row div-contenido">
-            <h6><?php echo e($patrocinadores -> instagram); ?></h6>
+            <h6><a href="<?php echo e($patrocinadores -> instagram); ?>">Instagram</a></h6>
           </div>
           <div class="row div-contenido">
             <h6><?php echo e($patrocinadores -> email); ?></h6>
