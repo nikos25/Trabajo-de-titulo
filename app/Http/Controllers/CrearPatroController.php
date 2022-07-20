@@ -47,7 +47,7 @@ class CrearPatroController extends Controller
         $patrocinador-> instagram = $request -> Instagram;
         $patrocinador-> email = $request -> Email;
         $patrocinador->save();
-        return redirect()->route('patro');
+        return redirect()->route('patrocinadores');
     }
 
     /**

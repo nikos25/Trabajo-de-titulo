@@ -43,7 +43,7 @@
                     <a class="nav-link" href="{{route('noticia')}}">Noticias</a>
                 </li>
                 <li class="nav-item active" href="">
-                    <a class="nav-link" href="{{route('patro')}}">Patrocinadores</a>
+                    <a class="nav-link" href="{{route('patrocinadores')}}">Patrocinadores</a>
                 </li>
             </ul>
             <ul class="navbar-nav">

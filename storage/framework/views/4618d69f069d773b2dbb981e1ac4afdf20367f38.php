@@ -8,24 +8,27 @@
     </div>
 </div>
 <br>
-<table class="table table-striped table-dark">
-    <thead>
-      <tr>
-        <th scope="col">N°</th>
-        <th scope="col">Titulo</th>
-        <th scope="col">Entrada</th>
-      </tr>
-    </thead>
-    <?php $__currentLoopData = $noticias; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $num=>$noticia): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <tbody>
-            <tr>
-            <td><?php echo e($num + 1); ?></td>
-            <td><?php echo e($noticia->titulo); ?></td>
-            <td><a href="#" class="btn btn-secondary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Ver</a></td>
-            </tr>
-        </tbody>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-  </table>
+<div class="container-fluid"></div>
+  <div class="row">
+    <div class="card-body d-flex flex-column">
+      <?php $__currentLoopData = $noticias; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $num=>$noticias): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <div  class="container">
+        <div class="column div-noticia">
+          <div class="row div-contenido">
+            <h3><?php echo e($noticias -> titulo); ?></h3>
+          </div>
+          <div class="row div-contenido">
+            <h6><?php echo e($noticias -> descripcion); ?></h6>
+          </div>
+          <div class="row div-contenido-fecha">
+            <h8>Fecha de creacion: <?php echo e($noticias -> fecha); ?></h8>
+          </div>
+        </div>
+      </div>
+      <br>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+  </div>
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('welcome', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\seba1\OneDrive\Escritorio\Trabajo de titulo\Animalitos V\Trabajo-de-titulo\resources\views/Noticias/noticia.blade.php ENDPATH**/ ?>

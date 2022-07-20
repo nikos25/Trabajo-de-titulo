@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controller\{UsuariosController, generalController, CatalogoController,
-     NoticiaController, PatrocinadoresController, VideosController, ChatController, PerfilController, 
+     NoticiaController, PatrocinadoresController, VideoController, ChatController, PerfilController, 
      RegistroController, EspecieController, CrearNoticaController, FotografiasController,
      CrearFotografiasController, CrearPatroController};
 
@@ -35,13 +35,13 @@ Route::get('/CrearFotografias', [App\Http\Controllers\CrearFotografiasController
 Route::get('/Especie', [App\Http\Controllers\EspecieController::class, 'Especie'])->name('Especie');
 Route::post('/Especie', [App\Http\Controllers\EspecieController::class, 'store'])->name('crearEspecie');
 
-Route::get('/Videos', [App\Http\Controllers\VideosController::class, 'video'])->name('video');
+Route::get('/Videos', [App\Http\Controllers\VideoController::class, 'video'])->name('video');
 
 Route::get('/Noticias', [App\Http\Controllers\NoticiaController::class, 'noticia'])->name('noticia');
 Route::get('/CrearNoticias', [App\Http\Controllers\CrearNoticaController::class, 'crearNoticia'])->name('crearNoticia');
 Route::post('/CrearNoticias', [App\Http\Controllers\CrearNoticaController::class, 'store'])->name('NoticiaPost');
 
-Route::get('/Patrocinadores', [App\Http\Controllers\PatrocinadoresController::class, 'patro'])->name('patro');
+Route::get('/Patrocinadores', [App\Http\Controllers\PatrocinadoresController::class, 'patrocinadores'])->name('patrocinadores');
 Route::get('/CrearPatrocinador', [App\Http\Controllers\CrearPatroController::class, 'crearPatrocinador'])->name('crearPatrocinador');
 Route::post('/CrearPatrocinador', [App\Http\Controllers\CrearPatroController::class, 'store'])->name('patrocinador.store');
 

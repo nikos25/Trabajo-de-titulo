@@ -8,23 +8,26 @@
     </div>
 </div>
 <br>
-<table class="table table-striped table-dark">
-    <thead>
-      <tr>
-        <th scope="col">N°</th>
-        <th scope="col">Titulo</th>
-        <th scope="col">Entrada</th>
-      </tr>
-    </thead>
-    @foreach ($noticias as $num=>$noticia)
-        <tbody>
-            <tr>
-            <td>{{$num + 1}}</td>
-            <td>{{$noticia->titulo}}</td>
-            <td><a href="#" class="btn btn-secondary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Ver</a></td>
-            </tr>
-        </tbody>
-    @endforeach
-  </table>
+<div class="container-fluid"></div>
+  <div class="row">
+    <div class="card-body d-flex flex-column">
+      @foreach ($noticias as $num=>$noticias)
+      <div  class="container">
+        <div class="column div-noticia">
+          <div class="row div-contenido">
+            <h3>{{$noticias -> titulo}}</h3>
+          </div>
+          <div class="row div-contenido">
+            <h6>{{$noticias -> descripcion}}</h6>
+          </div>
+          <div class="row div-contenido-fecha">
+            <h8>Fecha de creacion: {{$noticias -> fecha}}</h8>
+          </div>
+        </div>
+      </div>
+      <br>
+      @endforeach
+    </div>
+  </div>
 </div>
 @endsection

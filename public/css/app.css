@@ -91,3 +91,27 @@ body{
 .forgot a{
     color: white;
 }
+
+.div-noticia{
+    background: #67C3E6;
+    opacity: 65%;
+}
+
+.div-contenido{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.div-descripcion{
+    margin: auto;
+}
+
+.div-contenido-fecha{
+    display: flex;
+    justify-content: right;
+    margin: auto;
+}
+
+
+
