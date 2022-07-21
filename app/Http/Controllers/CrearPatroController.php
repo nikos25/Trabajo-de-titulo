@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Patrocinador;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 
 class CrearPatroController extends Controller
 {
@@ -69,7 +70,8 @@ class CrearPatroController extends Controller
      */
     public function edit(Patrocinador $patrocinador)
     {
-        //
+        $patro = Patrocinador::where('id', $patrocinador->id)->firstOrFail();
+        return view('Patrocinadores.editarPatrcinador', compact('patro'));
     }
 
     /**
@@ -81,7 +83,14 @@ class CrearPatroController extends Controller
      */
     public function update(Request $request, Patrocinador $patrocinador)
     {
-        //
+        $patro = Patrocinador::where('id', $patrocinador->id)->firstOrFail();
+        $patrocinador-> nombre = $request->Nombre;
+        $patrocinador-> descripcion = $request -> Descripcion;
+        $patrocinador-> facebook = $request -> Facebook;
+        $patrocinador-> instagram = $request -> Instagram;
+        $patrocinador-> email = $request -> Email;
+        $patrocinador->save();
+        return redirect()->route('patrocinadores');
     }
 
     /**
@@ -92,6 +101,10 @@ class CrearPatroController extends Controller
      */
     public function destroy(Patrocinador $patrocinador)
     {
-        //
+        $patrocinadores = Patrocinador::findOrFail($patrocinador ->id);
+
+        $patrocinadores -> delete();
+        $patrocinadores = Patrocinador::all();
+        return view('Patrocinadores.Patrocinadores', compact('patrocinadores'));
     }
 }

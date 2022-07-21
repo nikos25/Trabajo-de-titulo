@@ -29,6 +29,17 @@
           <div class="row div-contenido">
             <h6><?php echo e($patrocinadores -> email); ?></h6>
           </div>
+          <div class="row div-botones">
+            <button type="submit" class="btn btn-danger" form="delete_<?php echo e($patrocinadores -> id); ?>" onclick="return" confirm('¿Seguro quiere eliminar?')>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+            <form action="<?php echo e(route('borrarPatrocinador', $patrocinadores -> id)); ?>" id="delete_<?php echo e($patrocinadores -> id); ?>" method="POST" enctype="multipart/form-data" hidden>
+              <?php echo csrf_field(); ?>
+              <?php echo method_field('DELETE'); ?>
+            </form>
+            <a class="btn btn-info" href="<?php echo e(route('editarPatrocinador', $patrocinadores -> id)); ?>" type="button"><i class="far fa-edit"></i>
+            </a>
+          </div>
         </div>
       </div>
       <br>

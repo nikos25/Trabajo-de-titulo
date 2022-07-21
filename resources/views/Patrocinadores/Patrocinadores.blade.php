@@ -29,6 +29,17 @@
           <div class="row div-contenido">
             <h6>{{$patrocinadores -> email}}</h6>
           </div>
+          <div class="row div-botones">
+            <button type="submit" class="btn btn-danger" form="delete_{{$patrocinadores -> id}}" onclick="return" confirm('¿Seguro quiere eliminar?')>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+            <form action="{{route('borrarPatrocinador', $patrocinadores -> id)}}" id="delete_{{$patrocinadores -> id}}" method="POST" enctype="multipart/form-data" hidden>
+              @csrf
+              @method('DELETE')
+            </form>
+            <a class="btn btn-info" href="{{route('editarPatrocinador', $patrocinadores -> id)}}" type="button"><i class="far fa-edit"></i>
+            </a>
+          </div>
         </div>
       </div>
       <br>

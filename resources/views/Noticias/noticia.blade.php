@@ -20,8 +20,14 @@
           <div class="row div-contenido">
             <h6>{{$noticias -> descripcion}}</h6>
           </div>
-          <div class="row div-contenido-fecha">
-            <h8>Fecha de creacion: {{$noticias -> fecha}}</h8>
+          <div class="container">
+            <div class="row div-contenido-fecha">
+              <h8>Fecha de creacion: {{$noticias -> fecha}}</h8>
+            </div>
+            <div class="row div-botones">
+              <a class="btn btn-danger" href="#" type="button"><i class="fa fa-trash" aria-hidden="true"></i></a>
+              <a class="btn btn-info" href="{{route('editarNoticia', $noticias -> id)}}" type="button"><i class="far fa-edit"></i></a>
+            </div>
           </div>
         </div>
       </div>

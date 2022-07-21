@@ -40,10 +40,15 @@ Route::get('/Videos', [App\Http\Controllers\VideoController::class, 'video'])->n
 Route::get('/Noticias', [App\Http\Controllers\NoticiaController::class, 'noticia'])->name('noticia');
 Route::get('/CrearNoticias', [App\Http\Controllers\CrearNoticaController::class, 'crearNoticia'])->name('crearNoticia');
 Route::post('/CrearNoticias', [App\Http\Controllers\CrearNoticaController::class, 'store'])->name('NoticiaPost');
+Route::get('/CrearNoticias/{noticia}/editar', [App\Http\Controllers\CrearNoticaController::class, 'edit'])->name('editarNoticia');
+Route::post('/CrearNoticias/{noticia}/editar', [App\Http\Controllers\CrearNoticaController::class, 'update'])->name('Noticia.update');
 
 Route::get('/Patrocinadores', [App\Http\Controllers\PatrocinadoresController::class, 'patrocinadores'])->name('patrocinadores');
 Route::get('/CrearPatrocinador', [App\Http\Controllers\CrearPatroController::class, 'crearPatrocinador'])->name('crearPatrocinador');
 Route::post('/CrearPatrocinador', [App\Http\Controllers\CrearPatroController::class, 'store'])->name('patrocinador.store');
+Route::get('/CrearPatrocinador/{patrocinador}/editar', [App\Http\Controllers\CrearPatroController::class, 'edit'])->name('editarPatrocinador');
+Route::post('/CrearPatrocinador/{patrocinador}/editar', [App\Http\Controllers\CrearPatroController::class, 'update'])->name('editarPatrocinador');
+Route::delete('/eliminarPatrocinador/{patrocinador}/eliminar', [App\Http\Controllers\CrearPatroController::class, 'destroy'])->name('borrarPatrocinador');
 
 Route::get('/Chat', [App\Http\Controllers\ChatController::class, 'chat'])->name('chat');
 

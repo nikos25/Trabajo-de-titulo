@@ -15,7 +15,8 @@ class CrearNoticaController extends Controller
      */
 
     public function crearNoticia(){
-        return view('Noticias.crearNoticia');
+        $noticias = Noticia::all();
+        return view('Noticias.crearNoticia', compact('noticias'));
     }
 
     public function index()
@@ -69,7 +70,9 @@ class CrearNoticaController extends Controller
      */
     public function edit(Noticia $noticia)
     {
-        //
+        $noticias = Noticia::where('id', $noticia->id)->firstOrFail();
+        return view('Noticias.editarNoticia', compact('noticias'));
+
     }
 
     /**
@@ -81,7 +84,11 @@ class CrearNoticaController extends Controller
      */
     public function update(Request $request, Noticia $noticia)
     {
-        //
+        $noticias = Noticia::where('id', $noticia->id)->firstOrFail();
+        $noticia->titulo = $request->titulo;
+        $noticia->descripcion = $request-> descripcion;
+        $noticia->save();
+        return redirect()->route('noticia');
     }
 
     /**
