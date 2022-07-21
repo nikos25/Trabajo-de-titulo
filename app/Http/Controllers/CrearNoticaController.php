@@ -99,6 +99,10 @@ class CrearNoticaController extends Controller
      */
     public function destroy(Noticia $noticia)
     {
-        //
+        $noticias = Noticia::findOrFail($noticia ->id);
+
+        $noticias -> delete();
+        $noticias = Noticia::all();
+        return view('Noticias.noticia', compact('noticias'));
     }
 }

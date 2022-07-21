@@ -29,7 +29,7 @@ Route::post('/Registrar', [App\Http\Controllers\UsuariosController::class, 'stor
 Route::get('/Bienvenido', [App\Http\Controllers\generalController::class, 'inicio'])->name('inicio');
 
 Route::get('/Catalogo', [App\Http\Controllers\CatalogoController::class, 'catalogo'])->name('catalogo');
-Route::get('/Fotografias', [App\Http\Controllers\FotografiasController::class, 'fotografia'])->name('fotografia');
+Route::get('/Fotografias/{especie}', [App\Http\Controllers\FotografiasController::class, 'fotografia'])->name('fotografia');
 Route::get('/CrearFotografias', [App\Http\Controllers\CrearFotografiasController::class, 'crearFotografia'])->name('crearFotografia');
 
 Route::get('/Especie', [App\Http\Controllers\EspecieController::class, 'Especie'])->name('Especie');
@@ -42,6 +42,7 @@ Route::get('/CrearNoticias', [App\Http\Controllers\CrearNoticaController::class,
 Route::post('/CrearNoticias', [App\Http\Controllers\CrearNoticaController::class, 'store'])->name('NoticiaPost');
 Route::get('/CrearNoticias/{noticia}/editar', [App\Http\Controllers\CrearNoticaController::class, 'edit'])->name('editarNoticia');
 Route::post('/CrearNoticias/{noticia}/editar', [App\Http\Controllers\CrearNoticaController::class, 'update'])->name('Noticia.update');
+Route::delete('/CrearNoticias/{noticia}/editar', [App\Http\Controllers\CrearNoticaController::class, 'destroy'])->name('borrarNoticia');
 
 Route::get('/Patrocinadores', [App\Http\Controllers\PatrocinadoresController::class, 'patrocinadores'])->name('patrocinadores');
 Route::get('/CrearPatrocinador', [App\Http\Controllers\CrearPatroController::class, 'crearPatrocinador'])->name('crearPatrocinador');

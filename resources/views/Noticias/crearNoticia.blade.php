@@ -14,6 +14,7 @@
                 <div class="form-group div-descripcion">
                     <input type="text" class="form-control" placeholder="descripcion" name="descripcion" style="height: 3cm" maxlength="1000">
                 </div>
+                <br>
                 <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i>  Crear</button>
             </form>
             <div class="col-12 forgot">

@@ -25,7 +25,13 @@
               <h8>Fecha de creacion: <?php echo e($noticias -> fecha); ?></h8>
             </div>
             <div class="row div-botones">
-              <a class="btn btn-danger" href="#" type="button"><i class="fa fa-trash" aria-hidden="true"></i></a>
+              <button type="submit" class="btn btn-danger" form="delete_<?php echo e($noticias -> id); ?>" onclick="return" confirm('¿Seguro quiere eliminar?')>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+              <form action="<?php echo e(route('borrarNoticia', $noticias -> id)); ?>" id="delete_<?php echo e($noticias -> id); ?>" method="POST" enctype="multipart/form-data" hidden>
+                <?php echo csrf_field(); ?>
+                <?php echo method_field('DELETE'); ?>
+              </form>
               <a class="btn btn-info" href="<?php echo e(route('editarNoticia', $noticias -> id)); ?>" type="button"><i class="far fa-edit"></i></a>
             </div>
           </div>

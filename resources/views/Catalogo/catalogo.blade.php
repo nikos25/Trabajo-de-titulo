@@ -5,7 +5,6 @@
           <div class="row" align = "center">
             @if(Auth::user()->rol_id == 1)
             <a href="{{route('crearEspecie')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-edit"></i> Crear especie</a>
-            <a href="{{route('crearFotografia')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-edit"></i> Crear fotografia</a>
             @endif
           </div>
         </div>
@@ -24,7 +23,7 @@
                 <tr>
                 <td>{{$num + 1}}</td>
                 <td>{{$especie->nom_especie}}</td>
-                <td><a href="{{route('fotografia')}}" class="btn btn-secondary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Ver</a></td>
+                <td><a href="{{route('fotografia', $especie ->id)}}" class="btn btn-secondary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Ver</a></td>
                 </tr>
             </tbody>
         @endforeach

@@ -24,7 +24,7 @@
                 <div class="form-group" id="email-group">
                     <input type="text" class="form-control" placeholder="Email" name="Email" value="<?php echo e($patro -> email); ?>">
                 </div>
-                <button type="submit" class="btn btn-dark">><i class="far fa-save"></i>  Guardar</button>
+                <button type="submit" class="btn btn-dark"><i class="far fa-save"></i>  Guardar</button>
             </form>
             <div class="col-12 forgot">
               
