@@ -34,6 +34,8 @@ Route::get('/CrearFotografias', [App\Http\Controllers\CrearFotografiasController
 
 Route::get('/Especie', [App\Http\Controllers\EspecieController::class, 'Especie'])->name('Especie');
 Route::post('/Especie', [App\Http\Controllers\EspecieController::class, 'store'])->name('crearEspecie');
+Route::get('/Especie/{especie}/editar', [App\Http\Controllers\EspecieController::class, 'edit'])->name('editEspecie');
+Route::post('/Especie/{especie}/editar', [App\Http\Controllers\EspecieController::class, 'update'])->name('Especie.update');
 
 Route::get('/Videos', [App\Http\Controllers\VideoController::class, 'video'])->name('video');
 
@@ -42,7 +44,7 @@ Route::get('/CrearNoticias', [App\Http\Controllers\CrearNoticaController::class,
 Route::post('/CrearNoticias', [App\Http\Controllers\CrearNoticaController::class, 'store'])->name('NoticiaPost');
 Route::get('/CrearNoticias/{noticia}/editar', [App\Http\Controllers\CrearNoticaController::class, 'edit'])->name('editarNoticia');
 Route::post('/CrearNoticias/{noticia}/editar', [App\Http\Controllers\CrearNoticaController::class, 'update'])->name('Noticia.update');
-Route::delete('/CrearNoticias/{noticia}/editar', [App\Http\Controllers\CrearNoticaController::class, 'destroy'])->name('borrarNoticia');
+Route::delete('/CrearNoticias/{noticia}/eliminar', [App\Http\Controllers\CrearNoticaController::class, 'destroy'])->name('borrarNoticia');
 
 Route::get('/Patrocinadores', [App\Http\Controllers\PatrocinadoresController::class, 'patrocinadores'])->name('patrocinadores');
 Route::get('/CrearPatrocinador', [App\Http\Controllers\CrearPatroController::class, 'crearPatrocinador'])->name('crearPatrocinador');

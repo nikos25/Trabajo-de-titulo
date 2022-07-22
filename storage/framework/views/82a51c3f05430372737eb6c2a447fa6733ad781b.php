@@ -17,6 +17,14 @@
                 <div class="form-group" id="valor-group">
                     <input type="text" class="form-control" placeholder="Valor" name="Valor">
                 </div>
+                <div class="form-group">
+                    <label for="especie" placeholder="Especie"></label>
+                    <select class="form-control">
+                        <?php $__currentLoopData = $especies; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $especies): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($especies->id); ?>"><?php echo e($especies->nom_especie); ?></option>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i>  Crear especie</button>
             </form>
             <div class="col-12 forgot">

@@ -17,6 +17,14 @@
                 <div class="form-group" id="valor-group">
                     <input type="text" class="form-control" placeholder="Valor" name="Valor">
                 </div>
+                <div class="form-group">
+                    <label for="especie" placeholder="Especie"></label>
+                    <select class="form-control">
+                        @foreach ($especies as $especies)
+                            <option value="{{$especies->id}}">{{$especies->nom_especie}}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i>  Crear especie</button>
             </form>
             <div class="col-12 forgot">

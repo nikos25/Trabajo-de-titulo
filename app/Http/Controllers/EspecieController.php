@@ -65,7 +65,8 @@ class EspecieController extends Controller
      */
     public function edit(Especie $especie)
     {
-        //
+        $especies = Especie::where('id', $especie->id)->firstOrFail();
+        return view('Catalogo.editarEspecie', compact('especies'));
     }
 
     /**
@@ -77,7 +78,12 @@ class EspecieController extends Controller
      */
     public function update(Request $request, Especie $especie)
     {
-        //
+        $esp = Especie::where('id', $especie->id)->firstOrFail();
+        $especie->nom_especie = $request->Especie;
+        $especie->save();
+        $especies = Especie::all();
+        return view('Catalogo.catalogo', compact('especies'));
+
     }
 
     /**

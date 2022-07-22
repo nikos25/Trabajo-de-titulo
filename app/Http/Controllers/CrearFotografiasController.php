@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fotografia;
+use App\Models\{Fotografia, Especie};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,7 +15,8 @@ class CrearFotografiasController extends Controller
      */
 
     public function crearFotografia(){
-        return view('Catalogo.crearFotografia');
+        $especies = Especie::all();
+        return view('Catalogo.crearFotografia', compact('especies'));
     }
     public function index()
     {
