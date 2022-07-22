@@ -56,7 +56,7 @@
             </ul>
         </div>
     </nav> 
-    <div class="p-2">
+    <div class="p-2 container-fluid">
         <?php echo $__env->yieldContent('contenido-principal'); ?>
     </div>
     

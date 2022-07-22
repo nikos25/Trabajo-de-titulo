@@ -1,7 +1,7 @@
 
 <?php $__env->startSection('contenido-principal'); ?>
     <div class="container-flex div-contenedor">
-        <div class="row row-titulo">
+        <div class="row row-titulo text-center">
             <div class="column">
                 <img class="logo" src="images/logo.png">
             </div>
@@ -11,7 +11,7 @@
                 </h1>
             </div>
         </div>
-        <div class="column div-parrafo">
+        <div class="column div-parrafo text-center">
             <h5 class="subtitulo">Bienvenidos a nuestra pagina web</h5>
             <p class="parrafo">
                 En esta pagina podras encontrar las distintas

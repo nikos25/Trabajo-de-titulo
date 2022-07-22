@@ -13,8 +13,9 @@ class FotografiasController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function fotografia(){
-        return view('Catalogo.fotografia');
+    public function fotografia($id){
+        $fotografias = Fotografia::where('id_especie', $id)->get();
+        return view('Catalogo.fotografia', compact('fotografias'));
     }
     
     public function index()

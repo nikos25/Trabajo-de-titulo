@@ -49,7 +49,7 @@ class CrearFotografiasController extends Controller
         $fotografia -> valor = $request -> Valor;
         $fotografia -> save();
         $especies = Especie::all();
-        return view('Catalogo.catalogo', compact('especies'));
+        return view('Catalogo.crearFotografia', compact('especies'));
 
     }
 
