@@ -6,7 +6,7 @@
             <div class="col-12 user-image">
                 <img src="images\Imagen.png">
             </div>
-            <form action="" class="col-12" method="POST" action="">
+            <form action="<?php echo e(route('crearFoto')); ?>" class="col-12" method="POST" action="" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <div class="form-group" id="image-group">
                     <input type="file" class="form-control" placeholder="Fotografia" name="Fotografia" accept="image/*">
@@ -19,9 +19,9 @@
                 </div>
                 <div class="form-group">
                     <label for="especie" placeholder="Especie"></label>
-                    <select class="form-control">
+                    <select class="form-control"  name='id_especie'>
                         <?php $__currentLoopData = $especies; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $especies): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <option value="<?php echo e($especies->id); ?>"><?php echo e($especies->nom_especie); ?></option>
+                            <option value="<?php echo e($especies->id); ?>"><?php echo e($especies->id); ?> - <?php echo e($especies->nom_especie); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </div>
@@ -33,6 +33,5 @@
         </div>
     </div>
 </div>
-
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('welcome', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\seba1\OneDrive\Escritorio\Trabajo de titulo\Animalitos V\Trabajo-de-titulo\resources\views/Catalogo/crearFotografia.blade.php ENDPATH**/ ?>

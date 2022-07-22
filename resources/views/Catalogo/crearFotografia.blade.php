@@ -6,7 +6,7 @@
             <div class="col-12 user-image">
                 <img src="images\Imagen.png">
             </div>
-            <form action="" class="col-12" method="POST" action="">
+            <form action="{{route('crearFoto')}}" class="col-12" method="POST" action="" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group" id="image-group">
                     <input type="file" class="form-control" placeholder="Fotografia" name="Fotografia" accept="image/*">
@@ -19,9 +19,9 @@
                 </div>
                 <div class="form-group">
                     <label for="especie" placeholder="Especie"></label>
-                    <select class="form-control">
+                    <select class="form-control"  name='id_especie'>
                         @foreach ($especies as $especies)
-                            <option value="{{$especies->id}}">{{$especies->nom_especie}}</option>
+                            <option value="{{$especies->id}}">{{$especies->id}} - {{$especies->nom_especie}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -33,5 +33,4 @@
         </div>
     </div>
 </div>
-
 @endsection

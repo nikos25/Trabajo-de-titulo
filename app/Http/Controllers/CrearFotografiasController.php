@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Fotografia, Especie};
+use App\Models\{Catalogo, Fotografia, Especie};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,7 +41,15 @@ class CrearFotografiasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $fotografia = new Fotografia();
+        $fotografia -> id_admin = Auth::user()->rol_id;
+        $fotografia -> id_especie = $request -> id_especie;
+        $fotografia -> imagen = $request -> Fotografia->store('public/Fotografias');
+        $fotografia -> descripcion = $request -> Descripcion;
+        $fotografia -> valor = $request -> Valor;
+        $fotografia -> save();
+        $especies = Especie::all();
+        return view('Catalogo.catalogo', compact('especies'));
 
     }
 

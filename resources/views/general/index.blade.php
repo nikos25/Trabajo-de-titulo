@@ -1,23 +1,33 @@
 @extends('welcome')
 @section('contenido-principal')
-    <div class="container">
-        <div class="row">
-            <div class="col logo">
-                <img src="images/logo.png">
+    <div class="container-flex div-contenedor">
+        <div class="row row-titulo">
+            <div class="column">
+                <img class="logo" src="images/logo.png">
             </div>
-            <div class="col" style="align-content">
-                <h1>Animalitos V Region</h1>
+            <div class="column">
+                <h1 class="titulo"> 
+                    Animalitos V Region
+                </h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col rrss">
-                <a href="https://www.instagram.com/animalitos.vregion/" class="btn  " role="button" aria-pressed="true"><i class="fab fa-instagram"></i> Animalitos.Vregion</a>
-            </div>
-            <div class="col parrafo">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non urna sed massa sodales tempus a vitae diam. Quisque nunc sem, efficitur pellentesque commodo sed, pellentesque in nisl. Quisque massa magna, volutpat sit amet erat ut, ullamcorper tristique mi. Integer id ex vitae odio condimentum viverra. Ut condimentum nisi enim, et aliquam leo placerat in. In eget semper tellus, sed egestas mi. In vestibulum dapibus enim eu mattis. Nullam nec hendrerit ipsum. Morbi aliquam, ex nec vestibulum bibendum, dolor tortor dictum turpis, id congue ligula elit id ante. Cras blandit, metus eget luctus volutpat, metus erat volutpat enim, sed dapibus sem mi at lorem. Nunc egestas risus ligula, eget consectetur ante molestie id. Suspendisse condimentum velit porttitor aliquet lobortis.
-                </p>
-            </div>
+        <div class="column div-parrafo">
+            <h5 class="subtitulo">Bienvenidos a nuestra pagina web</h5>
+            <p class="parrafo">
+                En esta pagina podras encontrar las distintas
+                fotografias en venta de nuestro amplio catalogo de especies,
+                las cuales podras adquirir para distintos usos.
+            </p>
+            <p class="parrafo">
+                Pueden seguirnos en nuestras redes sociales o unirse a nuestro 
+                grupo de whatsapp en donde podran interactuar entre uds y ademas podremos resolver
+                problemas y/o dudas que puedan tener, tambien mencionar que por este grupo organizamos
+                salidas de fotografias y mas. <br> <br>
+                <a href="https://www.instagram.com/animalitos.vregion/" class="btn btn-secondary parrafo" role="button" aria-pressed="true"><i class="fab fa-instagram icono-ig"></i></a>
+                <a href="https://chat.whatsapp.com/Izy01zTEtEgJZ0UAWWHXAr" class="btn btn-secondary parrafo" role="button" aria-pressed="true"><i class="fab fa-whatsapp icono-wsp"></i></i></a>
+                
+            </p>
+            
         </div>
     </div>
 @endsection

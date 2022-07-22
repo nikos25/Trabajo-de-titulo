@@ -15,13 +15,7 @@
     
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <link rel="stylesheet" type="text/css" href="css/inicio.css">
-    <link rel="stylesheet" type="text/css" href="css/fotografias.css">
-
-    <style>
-        h1 { color: #D18E41; }
-        p { color: #D18E41 }
-      </style>
-    
+    <link rel="stylesheet" type="text/css" href="css/fotografias.css"> 
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -65,7 +59,7 @@
     <div class="p-2">
         @yield('contenido-principal')
     </div>
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

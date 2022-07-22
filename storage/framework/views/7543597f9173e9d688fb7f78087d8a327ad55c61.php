@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('contenido-principal'); ?>
     <div class="modal-dialog text-center">
         <div class="col-sm-8 main-section">
