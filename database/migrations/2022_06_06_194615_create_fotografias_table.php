@@ -17,6 +17,7 @@ class CreateFotografiasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_admin');
             $table->unsignedBigInteger('id_especie');
+            $table->string('nombre', 15);
             $table->string('imagen');
             $table->string('descripcion', 200);
             $table->integer('valor')->unsigned();

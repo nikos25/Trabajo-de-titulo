@@ -4,7 +4,7 @@
     <div class="column">
       <div class="row" align = "center">
         @if(Auth::user()->rol_id == 1)
-        <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-edit"></i> Crear video</a>
+        <a href="{{route('crearVideo')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-edit"></i> Crear video</a>
         @endif
       </div>
     </div>

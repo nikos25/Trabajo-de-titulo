@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Video;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VideoController extends Controller
 {
@@ -20,6 +21,10 @@ class VideoController extends Controller
         return view('Catalogo.videos');
     }
     
+    public function crearVideo(){
+        return view('Catalogo.crearVideos');
+    }
+
     public function index()
     {
         //
@@ -43,7 +48,14 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $video = new Video();
+        $video -> id_admin = Auth::user()->rol_id;;
+        $video -> nombre = $request -> Nombre;
+        $video -> descripcion = $request -> Descripcion;
+        $video -> link = $request -> Link;
+        $video -> save();
+        return view('Catalogo.crearVideos');
+
     }
 
     /**

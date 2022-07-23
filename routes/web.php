@@ -39,6 +39,8 @@ Route::get('/Especie/{especie}/editar', [App\Http\Controllers\EspecieController:
 Route::post('/Especie/{especie}/editar', [App\Http\Controllers\EspecieController::class, 'update'])->name('Especie.update');
 
 Route::get('/Videos', [App\Http\Controllers\VideoController::class, 'video'])->name('video');
+Route::get('/Videos/CrearVideo', [App\Http\Controllers\VideoController::class, 'crearVideo'])->name('crearVideo');
+Route::post('/Videos/Crear', [App\Http\Controllers\VideoController::class, 'store'])->name('video.store');
 
 Route::get('/Noticias', [App\Http\Controllers\NoticiaController::class, 'noticia'])->name('noticia');
 Route::get('/CrearNoticias', [App\Http\Controllers\CrearNoticaController::class, 'crearNoticia'])->name('crearNoticia');

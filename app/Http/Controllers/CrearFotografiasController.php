@@ -44,6 +44,7 @@ class CrearFotografiasController extends Controller
         $fotografia = new Fotografia();
         $fotografia -> id_admin = Auth::user()->rol_id;
         $fotografia -> id_especie = $request -> id_especie;
+        $fotografia -> nombre = $request -> Nombre;
         $fotografia -> imagen = $request -> Fotografia->store('public/Fotografias');
         $fotografia -> descripcion = $request -> Descripcion;
         $fotografia -> valor = $request -> Valor;

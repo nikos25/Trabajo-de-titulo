@@ -7,7 +7,7 @@
                     <img class="card-img-top" src="<?php echo e(Storage::url($fotografias->imagen)); ?>" alt="">
                     <div class="card-body">
                         <div class="card-title">
-                            Nombre
+                            <h3><?php echo e($fotografias->nombre); ?></h3>
                             <br>
                             <p class="card-text">
                                 <?php echo e($fotografias->descripcion); ?>
@@ -19,7 +19,9 @@
 
                                 </div>
                                 <div class="col">
-                                    botones
+                                    <?php if(Auth::user()->rol_id == 1): ?>
+                                        <a href="#" class="btn btn-primary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i> Ver</a>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>

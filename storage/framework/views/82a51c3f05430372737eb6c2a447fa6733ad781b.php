@@ -11,6 +11,9 @@
                 <div class="form-group" id="image-group">
                     <input type="file" class="form-control" placeholder="Fotografia" name="Fotografia" accept="image/*">
                 </div>
+                <div class="form-group" id="-group">
+                    <input type="text" class="form-control" placeholder="Nombre" name="Nombre">
+                </div>
                 <div class="form-group" id="descripcion-group">
                     <input type="text" class="form-control" placeholder="Descripcion" name="Descripcion">
                 </div>

@@ -7,7 +7,7 @@
                     <img class="card-img-top" src="{{Storage::url($fotografias->imagen)}}" alt="">
                     <div class="card-body">
                         <div class="card-title">
-                            Nombre
+                            <h3>{{$fotografias->nombre}}</h3>
                             <br>
                             <p class="card-text">
                                 {{$fotografias->descripcion}}
@@ -17,7 +17,9 @@
                                     ${{$fotografias->valor}}
                                 </div>
                                 <div class="col">
-                                    botones
+                                    @if(Auth::user()->rol_id == 1)
+                                        <a href="#" class="btn btn-primary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i> Ver</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
