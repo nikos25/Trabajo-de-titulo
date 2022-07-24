@@ -91,6 +91,9 @@ class PatrocinadoresController extends Controller
      */
     public function destroy(Patrocinador $patrocinador)
     {
-        //
+        $patrocinadores = Patrocinador::findOrFail($patrocinador -> id);
+        $patrocinadores -> delte();
+        $patrocinadores = Patrocinador::al();
+        return view('Patrocinadores.Patrocinadores', compact('patrocinadores'));
     }
 }

@@ -17,7 +17,7 @@
                 <div class="form-group" id="user-group">
                     <input type="text" class="form-control" placeholder="Link" name="Link">
                 </div>
-                <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i>  Crear especie</button>
+                <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i>  Crear video</button>
             </form>
             <div class="col-12 forgot">
               

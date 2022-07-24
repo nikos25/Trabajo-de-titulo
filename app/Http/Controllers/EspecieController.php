@@ -81,8 +81,8 @@ class EspecieController extends Controller
         $esp = Especie::where('id', $especie->id)->firstOrFail();
         $especie->nom_especie = $request->Especie;
         $especie->save();
-        $especies = Especie::all();
-        return view('Catalogo.catalogo', compact('especies'));
+        $especies = Especie::where('id', $especie->id)->firstOrFail();
+        return view('Catalogo.editarEspecie', compact('especies'));
 
     }
 
@@ -94,6 +94,10 @@ class EspecieController extends Controller
      */
     public function destroy(Especie $especie)
     {
-        //
+        $especies = Especie::findOrFail($especie ->id);
+
+        $especies -> delete();
+        $especies = Especie::all();
+        return view('Catalogo.catalogo', compact('especies'));
     }
 }

@@ -73,7 +73,8 @@ class CrearFotografiasController extends Controller
      */
     public function edit(Fotografia $fotografia)
     {
-        //
+        $fotografias = Fotografia::where('id', $fotografia->id)->firstOrFail();
+        return view('Catalogo.editarFotografia', compact('fotografias'));
     }
 
     /**
@@ -85,7 +86,12 @@ class CrearFotografiasController extends Controller
      */
     public function update(Request $request, Fotografia $fotografia)
     {
-        //
+        $fotografias = Fotografia::where('id', $fotografia->id)->firstOrFail();
+        $fotografias -> nombre = $request -> Nombre;
+        $fotografias -> descripcion = $request -> Descripcion;
+        $fotografias -> valor = $request -> Valor;
+        $fotografias -> save();
+        return view('Catalogo.editarFotografia', compact('fotografias'));
     }
 
     /**
@@ -96,6 +102,9 @@ class CrearFotografiasController extends Controller
      */
     public function destroy(Fotografia $fotografia)
     {
-        //
+        $fotografias = Fotografia::findOrFail($fotografia ->id);
+        $fotografias -> delete();
+        $fotografias = Fotografia::all();
+        return view('Catalogo.fotografia', compact('fotografias'));
     }
 }

@@ -27,15 +27,17 @@
                 <td>
                   <a href="<?php echo e(route('fotografia', $especies ->id)); ?>" class="btn btn-secondary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i></a>
                   <a class="btn btn-info" href="<?php echo e(route('editEspecie', $especies ->id)); ?>" type="button"><i class="far fa-edit"></i></a>
-                  <button type="submit" class="btn btn-danger" form="#" onclick="return" confirm('¿Seguro quiere eliminar?')>
+                  <button type="submit" class="btn btn-danger" form="delete_<?php echo e($especies -> id); ?>" onclick="return" confirm('¿Seguro quiere eliminar?')>
                     <i class="fa fa-trash" aria-hidden="true"></i>
                   </button>
-                  
+                  <form action="<?php echo e(route('borrarEspecie', $especies -> id)); ?>" id="delete_<?php echo e($especies -> id); ?>" method="POST" enctype="multipart/form-data" hidden>
+                    <?php echo csrf_field(); ?>
+                    <?php echo method_field('DELETE'); ?>
+                  </form>
                 </td>
                 </tr>
             </tbody>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       </table>
-</div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('welcome', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\seba1\OneDrive\Escritorio\Trabajo de titulo\Animalitos V\Trabajo-de-titulo\resources\views/Catalogo/catalogo.blade.php ENDPATH**/ ?>

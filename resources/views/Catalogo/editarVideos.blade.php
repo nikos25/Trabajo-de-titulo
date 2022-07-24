@@ -6,18 +6,18 @@
             <div class="col-12 user-image">
                 <img src="images\Imagen.png">
             </div>
-            <form action="{{Route('video.store')}}" class="col-12" method="POST">
+            <form action="" class="col-12" method="POST">
                 @csrf
                 <div class="form-group" id="user-group">
-                    <input type="text" class="form-control" placeholder="Nombre" name="Nombre">
+                    <input type="text" class="form-control" value="{{$videos -> nombre}}" name="Nombre">
                 </div>
                 <div class="form-group" id="user-group">
-                    <input type="text" class="form-control" placeholder="Descripcion" name="Descripcion">
+                    <input type="text" class="form-control" value="{{$videos -> descripcion}}" name="Descripcion">
                 </div>
                 <div class="form-group" id="user-group">
-                    <input type="text" class="form-control" placeholder="Link" name="Link">
+                    <input type="text" class="form-control" value="{{$videos -> link}}" name="Link">
                 </div>
-                <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i>  Crear video</button>
+                <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i> Editar video</button>
             </form>
             <div class="col-12 forgot">
               

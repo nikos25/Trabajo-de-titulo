@@ -18,7 +18,8 @@ class VideoController extends Controller
     }
 
     public function video(){
-        return view('Catalogo.videos');
+        $videos = Video::all();
+        return view('Catalogo.videos', compact('videos'));
     }
     
     public function crearVideo(){
@@ -77,7 +78,8 @@ class VideoController extends Controller
      */
     public function edit(Video $video)
     {
-        //
+        $videos = Video::where('id', $video->id)->firstOrFail();
+        return view('Catalogo.editarVideos', compact('videos'));
     }
 
     /**
@@ -89,7 +91,13 @@ class VideoController extends Controller
      */
     public function update(Request $request, Video $video)
     {
-        //
+        $videos = Video::where('id', $video->id)->firstOrFail();
+        $videos -> nombre= $request -> Nombre;
+        $videos -> descripcion= $request -> Descripcion;
+        $videos -> link= $request -> Link;
+        $videos -> save();
+        $videos = Video::where('id', $video->id)->firstOrFail();
+        return view('Catalogo.editarVideos', compact('videos'));
     }
 
     /**
@@ -100,6 +108,9 @@ class VideoController extends Controller
      */
     public function destroy(Video $video)
     {
-        //
+        $videos = Video::findOrFail($video -> id);
+        $videos -> delete();
+        $videos = Video::all();
+        return view('Catalogo.videos', compact('videos'));
     }
 }

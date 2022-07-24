@@ -19,8 +19,18 @@
 
                                 </div>
                                 <div class="col">
+                                    <a href="#" class="btn btn-primary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i> Ver</a>
+                                </div>
+                                <div class="col">
                                     <?php if(Auth::user()->rol_id == 1): ?>
-                                        <a href="#" class="btn btn-primary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i> Ver</a>
+                                        <a class="btn btn-info" href="<?php echo e(route('editFotografia', $fotografias ->id)); ?>" type="button"><i class="far fa-edit"></i></a>
+                                        <button type="submit" class="btn btn-danger" form="delete_<?php echo e($fotografias -> id); ?>" onclick="return" confirm('¿Seguro quiere eliminar?')>
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </button>
+                                        <form action="<?php echo e(route('borrarFoto', $fotografias -> id)); ?>" id="delete_<?php echo e($fotografias -> id); ?>" method="POST" enctype="multipart/form-data" hidden>
+                                        <?php echo csrf_field(); ?>
+                                        <?php echo method_field('DELETE'); ?>
+                                        </form>
                                     <?php endif; ?>
                                 </div>
                             </div>
