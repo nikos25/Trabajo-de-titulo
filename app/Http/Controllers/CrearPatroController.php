@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Patrocinador;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
+use App\Http\Requests\PatrocinadoresRequest;
 
 class CrearPatroController extends Controller
 {

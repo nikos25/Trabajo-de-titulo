@@ -15,7 +15,15 @@
                 <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i>  Editar especie</button>
             </form>
             <div class="col-12 forgot">
-              
+                @if ($errors->any())
+                <div class="col-12 alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error )
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
             </div>
         </div>
     </div>

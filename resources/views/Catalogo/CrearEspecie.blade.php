@@ -6,16 +6,23 @@
             <div class="col-12 user-image">
                 <img src="images\Especie.png">
             </div>
-            <form action="" class="col-12" method="POST" action="">
+            {{--  @if ($errors->any())
+            <div class="col-12 alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error )
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif  --}}
+            <form action="{{route('crearEspecie')}}" class="col-12" method="POST" action="">
                 @csrf
                 <div class="form-group" id="user-group">
-                    <input type="text" class="form-control" placeholder="Especie" name="Especie">
+                    <input type="text" class="form-control" placeholder="Especie" name="Especie" maxlength="10">
                 </div>
                 <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i>  Crear especie</button>
             </form>
-            <div class="col-12 forgot">
-              
-            </div>
+            <br>
         </div>
     </div>
 </div>

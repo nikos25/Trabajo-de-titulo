@@ -26,14 +26,16 @@
           <td><?php echo e($videos->descripcion); ?></td>
           <td>
             <a href="<?php echo e($videos->link); ?>" class="btn btn-primary" role="button" aria-pressed="true"><i class="fas fa-link"></i></a>
-            <a class="btn btn-info" href="<?php echo e(route('editVideo', $videos ->id)); ?>" type="button"><i class="far fa-edit"></i></a>
-            <button type="submit" class="btn btn-danger" form="delete_<?php echo e($videos -> id); ?>" onclick="return" confirm('¿Seguro quiere eliminar?')>
-              <i class="fa fa-trash" aria-hidden="true"></i>
-            </button>
-            <form action="<?php echo e(route('borrarVideo', $videos -> id)); ?>" id="delete_<?php echo e($videos -> id); ?>" method="POST" enctype="multipart/form-data" hidden>
-              <?php echo csrf_field(); ?>
-              <?php echo method_field('DELETE'); ?>
-            </form>
+            <?php if(Auth::user()->rol_id == 1): ?>
+              <a class="btn btn-info" href="<?php echo e(route('editVideo', $videos ->id)); ?>" type="button"><i class="far fa-edit"></i></a>
+              <button type="submit" class="btn btn-danger" form="delete_<?php echo e($videos -> id); ?>" onclick="return" confirm('¿Seguro quiere eliminar?')>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+              <form action="<?php echo e(route('borrarVideo', $videos -> id)); ?>" id="delete_<?php echo e($videos -> id); ?>" method="POST" enctype="multipart/form-data" hidden>
+                <?php echo csrf_field(); ?>
+                <?php echo method_field('DELETE'); ?>
+              </form>
+            <?php endif; ?>
           </td>
           </tr>
       </tbody>

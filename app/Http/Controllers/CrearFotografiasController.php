@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\{Catalogo, Fotografia, Especie};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\FotografiasRequest;
 
 class CrearFotografiasController extends Controller
 {

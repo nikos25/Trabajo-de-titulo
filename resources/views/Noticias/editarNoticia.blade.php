@@ -10,7 +10,7 @@
                 @csrf
                 <h3>Editar noticia</h3>
                 <div class="form-group" id="noticia-group">
-                    <input type="text" class="form-control" value="{{$noticias -> titulo}}" name="titulo">
+                    <input type="text" class="form-control" value="{{$noticias -> titulo}}" name="titulo" maxlength="25">
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control div-descripcion" value="{{$noticias -> descripcion}}" name="descripcion" style="height: 3cm" maxlength="1000">
@@ -18,6 +18,15 @@
                 <button type="submit" class="btn btn-dark"><i class="far fa-save"></i>  Guardar</button>
             </form>
             <div class="col-12 forgot">
+                @if ($errors->any())
+            <div class="col-12 alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error )
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             </div>
         </div>
     </div>

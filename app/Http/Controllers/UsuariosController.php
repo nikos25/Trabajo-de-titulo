@@ -40,15 +40,19 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-         $usuario = new Usuario();
-         $usuario->Email = $request->email;
-         $usuario->password = Hash::make($request->password);
-         $usuario->Nombre = $request->nombre;
-         $usuario->Apellido = $request->apellido;
-         $usuario->nombre_usuario = $request->nomUsuario;
-         $usuario->rol_id = 2;
-         $usuario->save();
-         return redirect()->route('registro');
+         if($request -> password == $request -> cpassword){
+            $usuario = new Usuario();
+            $usuario->Email = $request->email;
+            $usuario->password = Hash::make($request->password);
+            $usuario->Nombre = $request->nombre;
+            $usuario->Apellido = $request->apellido;
+            $usuario->nombre_usuario = $request->nomUsuario;
+            $usuario->rol_id = 2;
+            $usuario->save();
+            return redirect()->route('registro');
+         }else{
+            return back()->withErrors('contraseñas no coinciden');
+         }
     }
 
     /**

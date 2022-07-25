@@ -16,8 +16,6 @@
                     </div>
                     <?php if(Auth::user()->rol_id == 1): ?>
                         <a href="<?php echo e(route('registro')); ?>" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Crear administrador</a>
-                        <br>
-                        <br>
                     <?php endif; ?>
                     <a href="<?php echo e(route('logout')); ?>" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Cerrar sesion</a>
                 </div>

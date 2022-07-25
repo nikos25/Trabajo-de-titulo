@@ -26,14 +26,16 @@
                 <td><?php echo e($especies->nom_especie); ?></td>
                 <td>
                   <a href="<?php echo e(route('fotografia', $especies ->id)); ?>" class="btn btn-secondary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i></a>
-                  <a class="btn btn-info" href="<?php echo e(route('editEspecie', $especies ->id)); ?>" type="button"><i class="far fa-edit"></i></a>
-                  <button type="submit" class="btn btn-danger" form="delete_<?php echo e($especies -> id); ?>" onclick="return" confirm('¿Seguro quiere eliminar?')>
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                  </button>
-                  <form action="<?php echo e(route('borrarEspecie', $especies -> id)); ?>" id="delete_<?php echo e($especies -> id); ?>" method="POST" enctype="multipart/form-data" hidden>
-                    <?php echo csrf_field(); ?>
-                    <?php echo method_field('DELETE'); ?>
-                  </form>
+                  <?php if(Auth::user()->rol_id == 1): ?>
+                    <a class="btn btn-info" href="<?php echo e(route('editEspecie', $especies ->id)); ?>" type="button"><i class="far fa-edit"></i></a>
+                    <button type="submit" class="btn btn-danger" form="delete_<?php echo e($especies -> id); ?>" onclick="return" confirm('¿Seguro quiere eliminar?')>
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                    <form action="<?php echo e(route('borrarEspecie', $especies -> id)); ?>" id="delete_<?php echo e($especies -> id); ?>" method="POST" enctype="multipart/form-data" hidden>
+                      <?php echo csrf_field(); ?>
+                      <?php echo method_field('DELETE'); ?>
+                    </form>
+                  <?php endif; ?>
                 </td>
                 </tr>
             </tbody>

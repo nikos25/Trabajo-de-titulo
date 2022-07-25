@@ -24,16 +24,18 @@
             <div class="row div-contenido-fecha">
               <h8>Fecha de creacion: {{$noticias -> fecha}}</h8>
             </div>
-            <div class="row div-botones">
-              <button type="submit" class="btn btn-danger" form="delete_{{$noticias -> id}}" onclick="return" confirm('¿Seguro quiere eliminar?')>
-                <i class="fa fa-trash" aria-hidden="true"></i>
-              </button>
-              <form action="{{route('borrarNoticia', $noticias -> id)}}" id="delete_{{$noticias -> id}}" method="POST" enctype="multipart/form-data" hidden>
-                @csrf
-                @method('DELETE')
-              </form>
-              <a class="btn btn-info" href="{{route('editarNoticia', $noticias -> id)}}" type="button"><i class="far fa-edit"></i></a>
-            </div>
+            @if(Auth::user()->rol_id == 1)
+              <div class="row div-botones">
+                <button type="submit" class="btn btn-danger" form="delete_{{$noticias -> id}}" onclick="return" confirm('¿Seguro quiere eliminar?')>
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+                <form action="{{route('borrarNoticia', $noticias -> id)}}" id="delete_{{$noticias -> id}}" method="POST" enctype="multipart/form-data" hidden>
+                  @csrf
+                  @method('DELETE')
+                </form>
+                <a class="btn btn-info" href="{{route('editarNoticia', $noticias -> id)}}" type="button"><i class="far fa-edit"></i></a>
+              </div>
+            @endif
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Patrocinador;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\PatrocinadoresRequest;
 
 class PatrocinadoresController extends Controller
 {

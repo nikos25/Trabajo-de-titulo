@@ -11,20 +11,20 @@
                 <div class="form-group" id="image-group">
                     <input type="file" class="form-control" placeholder="Fotografia" name="Fotografia" accept="image/*">
                 </div>
-                <div class="form-group" id="-group">
-                    <input type="text" class="form-control" placeholder="Nombre" name="Nombre">
+                <div class="form-group" id="user-group">
+                    <input type="text" class="form-control" placeholder="Nombre" name="Nombre" maxlength="15">
                 </div>
                 <div class="form-group" id="descripcion-group">
-                    <input type="text" class="form-control" placeholder="Descripcion" name="Descripcion">
+                    <input type="text" class="form-control" placeholder="Descripcion" name="Descripcion" maxlength="200">
                 </div>
-                <div class="form-group" id="valor-group">
-                    <input type="text" class="form-control" placeholder="Valor" name="Valor">
+                <div class="form-group" id="valor-group" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)">
+                    <input type="text" class="form-control" placeholder="Valor" name="Valor" maxlength="10">
                 </div>
                 <div class="form-group">
                     <label for="especie" placeholder="Especie"></label>
                     <select class="form-control"  name='id_especie'>
                         <?php $__currentLoopData = $especies; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $especies): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <option value="<?php echo e($especies->id); ?>"><?php echo e($especies->id); ?> - <?php echo e($especies->nom_especie); ?></option>
+                            <option value="<?php echo e($especies->id); ?>"><?php echo e($especies->nom_especie); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </div>

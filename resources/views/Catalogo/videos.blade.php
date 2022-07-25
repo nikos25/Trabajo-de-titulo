@@ -26,14 +26,16 @@
           <td>{{$videos->descripcion}}</td>
           <td>
             <a href="{{$videos->link}}" class="btn btn-primary" role="button" aria-pressed="true"><i class="fas fa-link"></i></a>
-            <a class="btn btn-info" href="{{route('editVideo', $videos ->id)}}" type="button"><i class="far fa-edit"></i></a>
-            <button type="submit" class="btn btn-danger" form="delete_{{$videos -> id}}" onclick="return" confirm('¿Seguro quiere eliminar?')>
-              <i class="fa fa-trash" aria-hidden="true"></i>
-            </button>
-            <form action="{{route('borrarVideo', $videos -> id)}}" id="delete_{{$videos -> id}}" method="POST" enctype="multipart/form-data" hidden>
-              @csrf
-              @method('DELETE')
-            </form>
+            @if(Auth::user()->rol_id == 1)
+              <a class="btn btn-info" href="{{route('editVideo', $videos ->id)}}" type="button"><i class="far fa-edit"></i></a>
+              <button type="submit" class="btn btn-danger" form="delete_{{$videos -> id}}" onclick="return" confirm('¿Seguro quiere eliminar?')>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+              <form action="{{route('borrarVideo', $videos -> id)}}" id="delete_{{$videos -> id}}" method="POST" enctype="multipart/form-data" hidden>
+                @csrf
+                @method('DELETE')
+              </form>
+            @endif
           </td>
           </tr>
       </tbody>

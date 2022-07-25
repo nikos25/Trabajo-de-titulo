@@ -84,6 +84,10 @@ body{
     content: "\f0ac";
 }
 
+.form-group#transaccion-group::before{
+    content: "\f0ac";
+}
+
 .forgot{
     padding: 5px 0;
 }

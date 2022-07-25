@@ -26,14 +26,16 @@
                 <td>{{$especies->nom_especie}}</td>
                 <td>
                   <a href="{{route('fotografia', $especies ->id)}}" class="btn btn-secondary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i></a>
-                  <a class="btn btn-info" href="{{route('editEspecie', $especies ->id)}}" type="button"><i class="far fa-edit"></i></a>
-                  <button type="submit" class="btn btn-danger" form="delete_{{$especies -> id}}" onclick="return" confirm('¿Seguro quiere eliminar?')>
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                  </button>
-                  <form action="{{route('borrarEspecie', $especies -> id)}}" id="delete_{{$especies -> id}}" method="POST" enctype="multipart/form-data" hidden>
-                    @csrf
-                    @method('DELETE')
-                  </form>
+                  @if(Auth::user()->rol_id == 1)
+                    <a class="btn btn-info" href="{{route('editEspecie', $especies ->id)}}" type="button"><i class="far fa-edit"></i></a>
+                    <button type="submit" class="btn btn-danger" form="delete_{{$especies -> id}}" onclick="return" confirm('¿Seguro quiere eliminar?')>
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                    <form action="{{route('borrarEspecie', $especies -> id)}}" id="delete_{{$especies -> id}}" method="POST" enctype="multipart/form-data" hidden>
+                      @csrf
+                      @method('DELETE')
+                    </form>
+                  @endif
                 </td>
                 </tr>
             </tbody>

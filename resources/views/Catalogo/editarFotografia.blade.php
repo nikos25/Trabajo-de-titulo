@@ -9,18 +9,26 @@
             <form action="" class="col-12" method="POST" action="" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group" id="-group">
-                    <input type="text" class="form-control" value="{{$fotografias -> nombre}}" name="Nombre">
+                    <input type="text" class="form-control" value="{{$fotografias -> nombre}}" name="Nombre" maxlength="15">
                 </div>
                 <div class="form-group" id="descripcion-group">
-                    <input type="text" class="form-control" value="{{$fotografias -> descripcion}}" name="Descripcion">
+                    <input type="text" class="form-control" value="{{$fotografias -> descripcion}}" name="Descripcion" maxlength="200">
                 </div>
                 <div class="form-group" id="valor-group">
-                    <input type="text" class="form-control" value="{{$fotografias -> valor}}" name="Valor">
+                    <input type="text" class="form-control" value="{{$fotografias -> valor}}" name="Valor" maxlength="10">
                 </div>
                 <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i>  Crear especie</button>
             </form>
             <div class="col-12 forgot">
-              
+                @if ($errors->any())
+                <div class="col-12 alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error )
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
             </div>
         </div>
     </div>

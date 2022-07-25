@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Especie;
 use Illuminate\Http\Request;
+use App\Http\Requests\EspeciesRequest;
 
 class EspecieController extends Controller
 {
@@ -78,6 +79,7 @@ class EspecieController extends Controller
      */
     public function update(Request $request, Especie $especie)
     {
+        
         $esp = Especie::where('id', $especie->id)->firstOrFail();
         $especie->nom_especie = $request->Especie;
         $especie->save();

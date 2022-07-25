@@ -9,10 +9,10 @@
             <form action="<?php echo e(Route('video.store')); ?>" class="col-12" method="POST">
                 <?php echo csrf_field(); ?>
                 <div class="form-group" id="user-group">
-                    <input type="text" class="form-control" placeholder="Nombre" name="Nombre">
+                    <input type="text" class="form-control" placeholder="Nombre" name="Nombre" maxlength="20">
                 </div>
                 <div class="form-group" id="user-group">
-                    <input type="text" class="form-control" placeholder="Descripcion" name="Descripcion">
+                    <input type="text" class="form-control" placeholder="Descripcion" name="Descripcion" maxlength="200">
                 </div>
                 <div class="form-group" id="user-group">
                     <input type="text" class="form-control" placeholder="Link" name="Link">
@@ -20,7 +20,15 @@
                 <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i>  Crear video</button>
             </form>
             <div class="col-12 forgot">
-              
+                <?php if($errors->any()): ?>
+                <div class="col-12 alert alert-danger">
+                    <ul>
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li><?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('contenido-principal'); ?>
     <div class="modal-dialog text-center">
         <div class="col-sm-8 main-section">
@@ -22,12 +23,22 @@
                     <div class="form-group" id="pass-group">
                         <input type="password" class="form-control" placeholder="Contraseña" name="password">
                     </div>
-                    
+                    <div class="form-group" id="pass-group">
+                        <input type="password" class="form-control" placeholder="Confirme Contraseña" name="cpassword">
+                    </div>
                     
                     <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i>  Registrarse</button>
                 </form>
                 <div class="col-12 forgot">
-                  
+                    <?php if($errors->any()): ?>
+                    <div class="alert alert-danger">
+                        <ul class="mb-0">
+                            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <li><?php echo e($error); ?></li>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </ul>
+                    </div>
+                <?php endif; ?> 
                 </div>
             </div>
         </div>

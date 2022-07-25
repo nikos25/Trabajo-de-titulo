@@ -9,10 +9,10 @@
             <form action="" class="col-12" method="POST">
                 @csrf
                 <div class="form-group" id="user-group">
-                    <input type="text" class="form-control" value="{{$videos -> nombre}}" name="Nombre">
+                    <input type="text" class="form-control" value="{{$videos -> nombre}}" name="Nombre" maxlength="20">
                 </div>
                 <div class="form-group" id="user-group">
-                    <input type="text" class="form-control" value="{{$videos -> descripcion}}" name="Descripcion">
+                    <input type="text" class="form-control" value="{{$videos -> descripcion}}" name="Descripcion" maxlength="200">
                 </div>
                 <div class="form-group" id="user-group">
                     <input type="text" class="form-control" value="{{$videos -> link}}" name="Link">
@@ -20,7 +20,15 @@
                 <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i> Editar video</button>
             </form>
             <div class="col-12 forgot">
-              
+                @if ($errors->any())
+                <div class="col-12 alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error )
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
             </div>
         </div>
     </div>

@@ -9,10 +9,10 @@
             <form action="" class="col-12" method="POST" action="">
                 <?php echo csrf_field(); ?>
                 <div class="form-group" id="descripcion-group">
-                    <input type="text" class="form-control" placeholder="Nombre del patrocinador" name="Nombre">
+                    <input type="text" class="form-control" placeholder="Nombre del patrocinador" name="Nombre" maxlength="20">
                 </div>
                 <div class="form-group" id="descripcion-group">
-                    <input type="text" class="form-control" placeholder="Descripcion" name="Descripcion">
+                    <input type="text" class="form-control" placeholder="Descripcion" name="Descripcion" maxlength="200">
                 </div>
                 <div class="form-group" id="rrss-group">
                     <input type="text" class="form-control" placeholder="Facebook" name="Facebook">
@@ -21,12 +21,20 @@
                     <input type="text" class="form-control" placeholder="Instagram" name="Instagram">
                 </div>
                 <div class="form-group" id="email-group">
-                    <input type="text" class="form-control" placeholder="Email" name="Email">
+                    <input type="email" class="form-control" placeholder="Email" name="Email">
                 </div>
                 <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i>  Crear patrocinador</button>
             </form>
             <div class="col-12 forgot">
-              
+                <?php if($errors->any()): ?>
+                <div class="col-12 alert alert-danger">
+                    <ul>
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li><?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

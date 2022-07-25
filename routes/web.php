@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controller\{UsuariosController, generalController, CatalogoController,
-     NoticiaController, PatrocinadoresController, VideoController, ChatController, PerfilController, 
+     NoticiaController, PatrocinadoresController, VideoController, CompraController, PerfilController, 
      RegistroController, EspecieController, CrearNoticaController, FotografiasController,
      CrearFotografiasController, CrearPatroController};
 
@@ -64,6 +64,9 @@ Route::get('/Patrocinador/{patrocinador}/editar', [App\Http\Controllers\CrearPat
 Route::post('/Patrocinador/{patrocinador}/editar', [App\Http\Controllers\CrearPatroController::class, 'update'])->name('editarPatrocinador');
 Route::delete('/Patrocinador/{patrocinador}/eliminar', [App\Http\Controllers\CrearPatroController::class, 'destroy'])->name('borrarPatrocinador');
 
-Route::get('/Chat', [App\Http\Controllers\ChatController::class, 'chat'])->name('chat');
-
 Route::get('/Perfil', [App\Http\Controllers\PerfilController::class, 'perfil'])->name('perfil');
+
+Route::get('/Compra/{foto}/{valor}/{usuario}', [App\Http\Controllers\ComprasController::class, 'compra'])->name('compra');
+Route::post('/Compra/{foto}/{valor}/{usuario}', [App\Http\Controllers\ComprasController::class, 'store'])->name('compra.store');
+
+Route::get('/Comentarios/{foto}', [App\Http\Controllers\ComentariosController::class, 'comentarios'])->name('comentarios');

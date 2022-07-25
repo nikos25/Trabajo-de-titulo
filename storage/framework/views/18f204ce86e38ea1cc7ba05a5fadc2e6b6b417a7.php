@@ -18,10 +18,11 @@
                                     $<?php echo e($fotografias->valor); ?>
 
                                 </div>
-                                <div class="col">
-                                    <a href="#" class="btn btn-primary" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i> Ver</a>
+                                <div class="card-title">
+                                    <a href="<?php echo e(route('compra', ['foto' => $fotografias ->id, 'valor' => $fotografias -> valor, 'usuario' => Auth::user()->rol_id])); ?>" class="btn btn-primary" role="button" aria-pressed="true"><i class="fas fa-shopping-cart"></i> </a>
+                                    <a href="<?php echo e(route('comentarios', $fotografias -> id)); ?>" class="btn btn-success" role="button" aria-pressed="true"><i class="fas fa-comment"></i> </a>
                                 </div>
-                                <div class="col">
+                                <div class="card-title">
                                     <?php if(Auth::user()->rol_id == 1): ?>
                                         <a class="btn btn-info" href="<?php echo e(route('editFotografia', $fotografias ->id)); ?>" type="button"><i class="far fa-edit"></i></a>
                                         <button type="submit" class="btn btn-danger" form="delete_<?php echo e($fotografias -> id); ?>" onclick="return" confirm('¿Seguro quiere eliminar?')>
