@@ -20,6 +20,7 @@ class CreateNoticiasTable extends Migration
             $table->string('titulo', 25);
             $table->string('descripcion', 1000);
             $table->date('fecha');
+            $table-> softDeletes();
             $table->timestamps();
         });
     }

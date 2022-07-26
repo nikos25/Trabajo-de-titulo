@@ -6,7 +6,7 @@
             <div class="col-12 user-image">
                 <img src="images\Imagen.png">
             </div>
-            <form action="<?php echo e(route('crearFoto')); ?>" class="col-12" method="POST" action="" enctype="multipart/form-data">
+            <form action="<?php echo e(route('crearFoto')); ?>" class="col-12" method="POST" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <div class="form-group" id="image-group">
                     <input type="file" class="form-control" placeholder="Fotografia" name="Fotografia" accept="image/*">
@@ -31,7 +31,15 @@
                 <button type="submit" class="btn btn-dark"><i class="fas fa-sign-in-alt"></i>  Crear especie</button>
             </form>
             <div class="col-12 forgot">
-              
+                <?php if($errors->any()): ?>
+                <div class="col-12 alert alert-danger">
+                    <ul>
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li><?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

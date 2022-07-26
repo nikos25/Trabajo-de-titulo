@@ -15,7 +15,7 @@
     
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <link rel="stylesheet" type="text/css" href="css/inicio.css">
-    <link rel="stylesheet" type="text/css" href="css/fotografias.css"> 
+     
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

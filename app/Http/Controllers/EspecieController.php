@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Especie;
 use Illuminate\Http\Request;
 use App\Http\Requests\EspeciesRequest;
+use Illuminate\Validation\Rule;
 
 class EspecieController extends Controller
 {

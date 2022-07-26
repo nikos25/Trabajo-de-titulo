@@ -38,8 +38,8 @@ Route::delete('/Fotografia/{foto}/eliminar', [App\Http\Controllers\CrearFotograf
 
 Route::get('/Especie', [App\Http\Controllers\EspecieController::class, 'Especie'])->name('Especie');
 Route::post('/Especie', [App\Http\Controllers\EspecieController::class, 'store'])->name('crearEspecie');
-Route::get('/Especie/{especie}/editar', [App\Http\Controllers\EspecieController::class, 'edit'])->name('editEspecie');
-Route::post('/Especie/{especie}/editar', [App\Http\Controllers\EspecieController::class, 'update'])->name('Especie.update');
+Route::get('/Especie/{especie}', [App\Http\Controllers\EspecieController::class, 'edit'])->name('editEspecie');
+Route::post('/Especie/{especie}', [App\Http\Controllers\EspecieController::class, 'update'])->name('Especie.update');
 Route::delete('/Especie/{especie}/eliminar', [App\Http\Controllers\EspecieController::class, 'destroy'])->name('borrarEspecie');
 
 
@@ -70,3 +70,4 @@ Route::get('/Compra/{foto}/{valor}/{usuario}', [App\Http\Controllers\ComprasCont
 Route::post('/Compra/{foto}/{valor}/{usuario}', [App\Http\Controllers\ComprasController::class, 'store'])->name('compra.store');
 
 Route::get('/Comentarios/{foto}', [App\Http\Controllers\ComentariosController::class, 'comentarios'])->name('comentarios');
+Route::post('/Comentarios/{foto}', [App\Http\Controllers\ComentariosController::class, 'store'])->name('comentarios.store');

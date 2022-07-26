@@ -20,6 +20,7 @@ class CreateVideosTable extends Migration
             $table->string('nombre', 20);
             $table->string('descripcion', 200);
             $table->string('link', 100);
+            $table-> softDeletes();
             $table->timestamps();
         });
     }

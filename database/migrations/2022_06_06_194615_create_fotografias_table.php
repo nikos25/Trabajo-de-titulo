@@ -21,6 +21,7 @@ class CreateFotografiasTable extends Migration
             $table->string('imagen');
             $table->string('descripcion', 200);
             $table->integer('valor')->unsigned();
+            $table-> softDeletes();
             $table->timestamps();
             $table->foreign('id_admin')->references('id')->on('usuarios');
             $table->foreign('id_especie')->references('id')->on('especies');

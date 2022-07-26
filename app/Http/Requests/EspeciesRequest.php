@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class EspeciesRequest extends FormRequest
 {
@@ -24,7 +25,10 @@ class EspeciesRequest extends FormRequest
     public function rules()
     {
         return [
-            'nom_especie' => 'required'
+            'nom_especie' => [
+                Rule::unique('especies')->ignore($this -> route('especie')),
+                'required'
+            ]
         ];
     }
 

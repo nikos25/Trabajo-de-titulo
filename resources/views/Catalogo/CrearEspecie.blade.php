@@ -6,7 +6,7 @@
             <div class="col-12 user-image">
                 <img src="images\Especie.png">
             </div>
-            {{--  @if ($errors->any())
+            @if ($errors->any())
             <div class="col-12 alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error )
@@ -14,7 +14,7 @@
                     @endforeach
                 </ul>
             </div>
-            @endif  --}}
+            @endif
             <form action="{{route('crearEspecie')}}" class="col-12" method="POST" action="">
                 @csrf
                 <div class="form-group" id="user-group">

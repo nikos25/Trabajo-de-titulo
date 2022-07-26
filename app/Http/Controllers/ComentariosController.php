@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Comentarios;
 use App\Http\Controllers\Controller;
+use App\Models\Compra;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ComentariosController extends Controller
 {
@@ -15,7 +17,8 @@ class ComentariosController extends Controller
      */
     
     public function comentarios($foto){
-        return view('Catalogo.comentarios', [$foto]);
+        $idfoto = $foto;
+        return view('Catalogo.comentarios', [$foto], compact('idfoto'));
     }
     
     public function index()
@@ -39,9 +42,16 @@ class ComentariosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $idfoto)
     {
-        //
+        $comentario = new Comentarios();
+        $comentario -> id_foto = $idfoto;
+        $comentario -> id_usuario = Auth::user()->id;
+        $comentario -> comentario = $request -> comentario;
+        $comentario -> clasificacion = $request -> clasificacion;
+        $comentario -> save();
+        $comentarios = Comentarios::where('id_foto', $idfoto)->get();
+        return view('welcome');
     }
 
     /**

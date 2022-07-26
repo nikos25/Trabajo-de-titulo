@@ -15,7 +15,8 @@ class CreateEspeciesTable extends Migration
     {
         Schema::create('especies', function (Blueprint $table) {
             $table->id();
-            $table->string('nom_especie', 10);
+            $table->string('nom_especie', 10)->unique();
+            $table-> softDeletes();
             $table->timestamps();
         });
     }

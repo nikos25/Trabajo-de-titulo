@@ -21,7 +21,8 @@ class CreateComprasTable extends Migration
             $table->foreign('id_foto')->references('id')->on('fotografias');
             $table->Integer('valor')->unsigned();
             $table->dateTime('fecha');
-            $table->string('transaccion', 10);
+            $table->string('transaccion', 10)->unique();
+            $table-> softDeletes();
             $table->timestamps();
         });
     }

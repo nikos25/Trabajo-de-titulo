@@ -7,11 +7,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use DateTime;
 
 class Usuario extends Authenticatable
 {
     use HasFactory;
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
     protected $table = 'usuarios';
 
 

@@ -24,6 +24,7 @@
                 Email de cuenta
             </div>
             <form action="<?php echo e(Route('compra.store', ['foto' => $idfoto, 'valor' => $cantvalor, 'usuario' => $idusuario])); ?>" class="col-12" method="POST">
+                <?php echo csrf_field(); ?>
                 <div class="form-group" id="transaccion-group">
                     <input type="text" placeholder="Numero de transaccion" name="transaccion" class="">
                 </div>

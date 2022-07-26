@@ -15,11 +15,12 @@ class CreatePatrocinadorTable extends Migration
     {
         Schema::create('patrocinador', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 20);
+            $table->string('nombre', 20)->unique();
             $table->string('descripcion', 200);
             $table->string('facebook');
             $table->string('instagram');
             $table->string('email');
+            $table-> softDeletes();
             $table->timestamps();
         });
     }

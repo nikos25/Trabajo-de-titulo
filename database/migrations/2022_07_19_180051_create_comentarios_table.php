@@ -17,8 +17,11 @@ class CreateComentariosTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_foto');
             $table->foreign('id_foto')->references('id')->on('fotografias');
+            $table->unsignedBigInteger('id_usuario');
+            $table->foreign('id_usuario')->references('id')->on('usuarios');
             $table->string('comentario', 200);
             $table->integer('clasificacion')->unsigned();
+            $table-> softDeletes();
             $table->timestamps();
         });
     }
