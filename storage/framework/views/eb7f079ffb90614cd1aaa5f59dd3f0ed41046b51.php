@@ -4,7 +4,7 @@
     <div class="col-sm-8 main-section">
         <div class="modal-content">
             <div class="col-12 user-image">
-                <img src="images\Especie.png">
+                <img src="<?php echo e(asset('images/Especie.png')); ?>">
             </div>
             <form action="" class="col-12" method="POST" action="">
                 <?php echo csrf_field(); ?>

@@ -24,15 +24,18 @@ class PatrocinadoresRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required',
-            'descripcion' => 'required',
+            'Nombre' => 'required|unique:patrocinador,nombre',
+            'Descripcion' => 'required',
+            'Email' => 'required'
         ];
     }
 
     public function messages(){
         return [
-            'nombre.required' => 'Nombre de patrocinador requerido',
-            'descripcion.required' => 'Descripcion de patrocinador requerido',
+            'Nombre.required' => 'Campo nombre no puede estar vacio',
+            'Nombre.unique' => 'Patrocinador ya existe',
+            'Descripcion.required' => 'Campo Descripcion no puede estar vacio',
+            'Email.required' => 'Campo email no puede estar vacio'
         ];
     }
 }

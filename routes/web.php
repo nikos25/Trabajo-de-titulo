@@ -32,8 +32,8 @@ Route::get('/Catalogo', [App\Http\Controllers\CatalogoController::class, 'catalo
 Route::get('/Fotografias/{especie}', [App\Http\Controllers\FotografiasController::class, 'fotografia'])->name('fotografia');
 Route::get('/CrearFotografias', [App\Http\Controllers\CrearFotografiasController::class, 'crearFotografia'])->name('crearFotografia');
 Route::post('/CrearFotografias', [App\Http\Controllers\CrearFotografiasController::class, 'store'])->name('crearFoto');
-Route::get('/Fotografia/{foto}/editar', [App\Http\Controllers\CrearFotografiasController::class, 'edit'])->name('editFotografia');
-Route::post('/Fotografia/{foto}/editar', [App\Http\Controllers\CrearFotografiasController::class, 'update'])->name('fotografia.up');
+Route::get('/Fotografia/{id}/editar', [App\Http\Controllers\CrearFotografiasController::class, 'edit'])->name('editFotografia');
+Route::post('/Fotografia/{foto}/update', [App\Http\Controllers\CrearFotografiasController::class, 'update'])->name('fotografia.up');
 Route::delete('/Fotografia/{foto}/eliminar', [App\Http\Controllers\CrearFotografiasController::class, 'destroy'])->name('borrarFoto');
 
 Route::get('/Especie', [App\Http\Controllers\EspecieController::class, 'Especie'])->name('Especie');

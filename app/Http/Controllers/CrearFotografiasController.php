@@ -40,7 +40,7 @@ class CrearFotografiasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FotografiasRequest $request)
     {
         $fotografia = new Fotografia();
         $fotografia -> id_admin = Auth::user()->rol_id;
@@ -72,10 +72,10 @@ class CrearFotografiasController extends Controller
      * @param  \App\Models\Fotografia  $fotografia
      * @return \Illuminate\Http\Response
      */
-    public function edit(Fotografia $fotografia)
+    public function edit($id)
     {
-        $fotografias = Fotografia::where('id', $fotografia->id)->firstOrFail();
-        return view('Catalogo.editarFotografia', compact('fotografias'));
+        $fotografias = Fotografia::where('id', $id)->firstOrFail();
+        return view('Catalogo.editarFotografia', compact('fotografias', 'id'));
     }
 
     /**
@@ -85,9 +85,9 @@ class CrearFotografiasController extends Controller
      * @param  \App\Models\Fotografia  $fotografia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Fotografia $fotografia)
+    public function update(FotografiasRequest $request, $foto)
     {
-        $fotografias = Fotografia::where('id', $fotografia->id)->firstOrFail();
+        $fotografias = Fotografia::where('id', $foto)->firstOrFail();
         $fotografias -> nombre = $request -> Nombre;
         $fotografias -> descripcion = $request -> Descripcion;
         $fotografias -> valor = $request -> Valor;
@@ -101,9 +101,9 @@ class CrearFotografiasController extends Controller
      * @param  \App\Models\Fotografia  $fotografia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Fotografia $fotografia)
+    public function destroy($id)
     {
-        $fotografias = Fotografia::findOrFail($fotografia ->id);
+        $fotografias = Fotografia::findOrFail($id);
         $fotografias -> delete();
         $fotografias = Fotografia::all();
         return view('Catalogo.fotografia', compact('fotografias'));

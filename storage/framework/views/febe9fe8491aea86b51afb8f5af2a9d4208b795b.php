@@ -4,13 +4,13 @@
     <div class="col-sm-8 main-section">
         <div class="modal-content">
             <div class="col-12 user-image">
-                <img src="images\Noticia.png">
+                <img src="<?php echo e(asset('images\Noticia.png')); ?>">
             </div>
             <form action="" class="col-12" method="POST" action="">
                 <?php echo csrf_field(); ?>
                 <h3>Editar noticia</h3>
                 <div class="form-group" id="noticia-group">
-                    <input type="text" class="form-control" value="<?php echo e($noticias -> titulo); ?>" name="titulo">
+                    <input type="text" class="form-control" value="<?php echo e($noticias -> titulo); ?>" name="titulo" maxlength="25">
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control div-descripcion" value="<?php echo e($noticias -> descripcion); ?>" name="descripcion" style="height: 3cm" maxlength="1000">
@@ -18,6 +18,15 @@
                 <button type="submit" class="btn btn-dark"><i class="far fa-save"></i>  Guardar</button>
             </form>
             <div class="col-12 forgot">
+                <?php if($errors->any()): ?>
+            <div class="col-12 alert alert-danger">
+                <ul>
+                    <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li><?php echo e($error); ?></li>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </ul>
+            </div>
+            <?php endif; ?>
             </div>
         </div>
     </div>

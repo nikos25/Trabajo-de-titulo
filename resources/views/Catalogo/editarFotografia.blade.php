@@ -4,11 +4,11 @@
     <div class="col-sm-8 main-section">
         <div class="modal-content">
             <div class="col-12 user-image">
-                <img src="images\Imagen.png">
+                <img src="{{ asset('images\Imagen.png') }}">
             </div>
-            <form action="" class="col-12" method="POST" action="" enctype="multipart/form-data">
+            <form action="{{route('fotografia.up', $id)}}" class="col-12" method="POST" action="" enctype="multipart/form-data">
                 @csrf
-                <div class="form-group" id="-group">
+                <div class="form-group" id="user-group">
                     <input type="text" class="form-control" value="{{$fotografias -> nombre}}" name="Nombre" maxlength="15">
                 </div>
                 <div class="form-group" id="descripcion-group">

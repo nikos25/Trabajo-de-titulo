@@ -4,7 +4,7 @@
     <div class="col-sm-8 main-section">
         <div class="modal-content">
             <div class="col-12 user-image">
-                <img src="images\Imagen.png">
+                <img src="<?php echo e(asset ('images\Imagen.png')); ?>">
             </div>
             <form action="<?php echo e(Route('video.store')); ?>" class="col-12" method="POST">
                 <?php echo csrf_field(); ?>

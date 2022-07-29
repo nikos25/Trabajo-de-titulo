@@ -4,18 +4,18 @@
         <div class="col-sm-8 main-section">
             <div class="modal-content">
                 <div class="col-12 user-image">
-                    <img src="images\usuario.png">
+                    <img src="<?php echo e(asset('images\usuario.png')); ?>">
                 </div>
                 <form action="" class="col-12" method="POST" action="">
                     <?php echo csrf_field(); ?>
                     <div class="form-group" id="user-group">
-                        <input type="text" class="form-control" placeholder="Nombre de usuario" name="nomUsuario">
+                        <input type="text" class="form-control" placeholder="Nombre de usuario" name="nomUsuario" maxlength="50">
                     </div>
                     <div class="form-group" id="user-group">
-                        <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+                        <input type="text" class="form-control" placeholder="Nombre" name="nombre" maxlength="50">
                     </div>
                     <div class="form-group" id="user-group">
-                        <input type="text" class="form-control" placeholder="Apellido" name="apellido">
+                        <input type="text" class="form-control" placeholder="Apellido" name="apellido" maxlength="50">
                     </div>
                     <div class="form-group" id="email-group">
                         <input type="email" class="form-control" placeholder="Correo electronico" name="email">

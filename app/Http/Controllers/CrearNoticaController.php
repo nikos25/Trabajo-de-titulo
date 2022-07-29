@@ -41,7 +41,7 @@ class CrearNoticaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NoticiaRequest $request)
     {
         $noticia = new Noticia();
         $noticia->id_admin = Auth::user()->rol_id;
@@ -83,7 +83,7 @@ class CrearNoticaController extends Controller
      * @param  \App\Models\Noticia  $noticia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Noticia $noticia)
+    public function update(NoticiaRequest $request, Noticia $noticia)
     {
         $noticias = Noticia::where('id', $noticia->id)->firstOrFail();
         $noticia->titulo = $request->titulo;

@@ -4,7 +4,7 @@
     <div class="col-sm-8 main-section">
         <div class="modal-content">
             <div class="col-12 user-image">
-                <img src="images\Noticia.png">
+                <img src="{{ asset('images\Noticia.png') }}">
             </div>
             <form action="" class="col-12" method="POST" action="">
                 @csrf

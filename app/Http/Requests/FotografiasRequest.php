@@ -24,19 +24,19 @@ class FotografiasRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required',
-            'imagen' => 'required',
-            'descripcion' => 'required',
-            'valor' => 'required',
+            'Nombre' => 'required',
+            'Descripcion' => 'required',
+            'Valor' => 'required',
+            'Fotografia' => 'required',
         ];
     }
 
     public function messages(){
         return [
-            'nombre.required' => 'EEl nombre es requerido',
-            'imagen.required' => 'La imagen es requerida',
-            'descripcion.required' => 'La descripcion es requerida',
-            'valor.required' => 'El valor es requerido',
+            'Nombre.required' => 'El campo nombre no puede estar vacio',
+            'Fotografia.required' => 'El campo imagen no puede estar vacio',
+            'Descripcion.required' => 'El campo descripcion no puede estar vacio',
+            'Valor.required' => 'El campo valor no puede estar vacio',
         ];
     }
 }

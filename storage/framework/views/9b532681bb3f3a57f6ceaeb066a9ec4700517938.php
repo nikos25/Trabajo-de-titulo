@@ -14,10 +14,14 @@
                     <div class="col-12 forgot">
                         <h5>Email: <?php echo e(Auth::user()->Email); ?></h5>
                     </div>
-                    <?php if(Auth::user()->rol_id == 1): ?>
+                    <div class="col">
+                        <?php if(Auth::user()->rol_id == 1): ?>
                         <a href="<?php echo e(route('registro')); ?>" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Crear administrador</a>
                     <?php endif; ?>
-                    <a href="<?php echo e(route('logout')); ?>" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Cerrar sesion</a>
+                    </div>
+                    <div class="col" style="padding: 5px">
+                        <a href="<?php echo e(route('logout')); ?>" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Cerrar sesion</a>
+                    </div>
                 </div>
             </div>
         </div>

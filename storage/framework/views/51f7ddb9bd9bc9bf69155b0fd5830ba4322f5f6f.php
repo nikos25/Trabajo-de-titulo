@@ -4,16 +4,16 @@
     <div class="col-sm-8 main-section">
         <div class="modal-content">
             <div class="col-12 user-image">
-                <img src="images\Patrocinador.png">
+                <img src="<?php echo e(asset('images\Patrocinador.png')); ?>">
             </div>
             <form action="" class="col-12" method="POST" action="">
                 <?php echo csrf_field(); ?>
                 <h3>Editar Patrocinador</h3>
                 <div class="form-group" id="descripcion-group">
-                    <input type="text" class="form-control" placeholder="Nombre del patrocinador" name="Nombre" value="<?php echo e($patro -> nombre); ?>">
+                    <input type="text" class="form-control" placeholder="Nombre del patrocinador" name="Nombre" value="<?php echo e($patro -> nombre); ?>" maxlength="20">
                 </div>
                 <div class="form-group" id="descripcion-group">
-                    <input type="text" class="form-control" placeholder="Descripcion" name="Descripcion" value="<?php echo e($patro -> descripcion); ?>">
+                    <input type="text" class="form-control" placeholder="Descripcion" name="Descripcion" value="<?php echo e($patro -> descripcion); ?>" maxlength="200">
                 </div>
                 <div class="form-group" id="rrss-group">
                     <input type="text" class="form-control" placeholder="Facebook" name="Facebook" value="<?php echo e($patro -> facebook); ?>">
@@ -27,7 +27,15 @@
                 <button type="submit" class="btn btn-dark"><i class="far fa-save"></i>  Guardar</button>
             </form>
             <div class="col-12 forgot">
-              
+                <?php if($errors->any()): ?>
+                <div class="col-12 alert alert-danger">
+                    <ul>
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li><?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

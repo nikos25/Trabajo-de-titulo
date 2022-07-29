@@ -14,10 +14,14 @@
                     <div class="col-12 forgot">
                         <h5>Email: {{Auth::user()->Email}}</h5>
                     </div>
-                    @if (Auth::user()->rol_id == 1)
+                    <div class="col">
+                        @if (Auth::user()->rol_id == 1)
                         <a href="{{route('registro')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Crear administrador</a>
                     @endif
-                    <a href="{{route('logout')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Cerrar sesion</a>
+                    </div>
+                    <div class="col" style="padding: 5px">
+                        <a href="{{route('logout')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"><i class="fas fa-sign-in-alt"></i>  Cerrar sesion</a>
+                    </div>
                 </div>
             </div>
         </div>

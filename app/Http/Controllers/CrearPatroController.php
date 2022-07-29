@@ -40,7 +40,7 @@ class CrearPatroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PatrocinadoresRequest $request)
     {
         $patrocinador = new Patrocinador();
         $patrocinador-> nombre = $request->Nombre;
@@ -82,7 +82,7 @@ class CrearPatroController extends Controller
      * @param  \App\Models\Patrocinador  $patrocinador
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Patrocinador $patrocinador)
+    public function update(PatrocinadoresRequest $request, Patrocinador $patrocinador)
     {
         $patro = Patrocinador::where('id', $patrocinador->id)->firstOrFail();
         $patrocinador-> nombre = $request->Nombre;

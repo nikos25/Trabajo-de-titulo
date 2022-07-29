@@ -25,16 +25,18 @@ class EspeciesRequest extends FormRequest
     public function rules()
     {
         return [
-            'nom_especie' => [
-                Rule::unique('especies')->ignore($this -> route('especie')),
-                'required'
-            ]
+            'Especie' => 'required|max:10|unique:especies,nom_especie',
+            
         ];
     }
 
     public function messages(){
         return [
-            'nom_especie.required' => 'indicar nombre de la especie',
+            'Especie.required' => 'indicar nombre de la especie',
+            'Especie.max' => 'maximo 10 caracteres',
+            'Especie.unique' => 'Esta especie ya existe'
+
+            
         ];
     }
 }

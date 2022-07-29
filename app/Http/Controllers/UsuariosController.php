@@ -6,7 +6,7 @@ use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\{Auth, Hash};
 use phpDocumentor\Reflection\PseudoTypes\True_;
-
+use App\Http\Requests\UsuariosRequest;
 
 
 
@@ -38,7 +38,7 @@ class UsuariosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsuariosRequest $request)
     {
          if($request -> password == $request -> cpassword){
             $usuario = new Usuario();

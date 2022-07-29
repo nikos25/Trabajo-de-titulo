@@ -31,8 +31,8 @@ class NoticiaRequest extends FormRequest
 
     public function messages(){
         return [
-            'titulo.required' => 'Se requiere el titulo',
-            'descripcion.required' =>'Se requiere descripcion',
+            'titulo.required' => 'Campo titulo no puede estar vacio',
+            'descripcion.required' =>'Campo descripcion no puede estar vacio',
         ];
     }
 }

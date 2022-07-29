@@ -40,7 +40,7 @@ class EspecieController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EspeciesRequest $request)
     {
         $especie = new Especie();
         $especie->nom_especie = $request->Especie;
@@ -78,7 +78,7 @@ class EspecieController extends Controller
      * @param  \App\Models\Especie  $especie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Especie $especie)
+    public function update(EspeciesRequest $request, Especie $especie)
     {
         
         $esp = Especie::where('id', $especie->id)->firstOrFail();
