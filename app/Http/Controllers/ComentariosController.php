@@ -19,8 +19,9 @@ class ComentariosController extends Controller
     
     public function comentarios($foto){
         $idfoto = $foto;
-        $comentario = Comentarios::all();
-        return view('Catalogo.comentarios', [$foto], compact('idfoto', 'comentario'));
+        $comentarios = Comentarios::all();
+        
+        return view('Catalogo.comentarios', [$foto], compact('idfoto', 'comentarios'));
     }
     
     public function index()
@@ -52,8 +53,9 @@ class ComentariosController extends Controller
         $comentario -> comentario = $request -> comentario;
         $comentario -> clasificacion = $request -> clasificacion;
         $comentario -> save();
+        $comentarios = Comentarios::all();
         $comentarios = Comentarios::where('id_foto', $idfoto)->get();
-        return view('welcome');
+        return view('Catalogo.comentarios', [$idfoto], compact('idfoto', 'comentarios'));
     }
 
     /**

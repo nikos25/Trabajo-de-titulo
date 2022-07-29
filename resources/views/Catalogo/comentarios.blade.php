@@ -1,7 +1,7 @@
 @extends('welcome')
 @section('contenido-principal')
 @php
-
+    $val = false;
 @endphp
 <div class="row">
     <div class="col d-flex">
@@ -40,30 +40,35 @@
                 </div>
                 <button type="submit" class="btn btn-dark"><i class="fas fa-comment"></i>  Comentar</button>
             </div>
-            <div class="column div-noticia">
-                <div class="row div-contenido">
-                    @foreach ($comentario->all() as $comentario )
-                        <div class="row div-contenido">
-                            <div class="col">
-                                <p>{{$comentario-> comentario}}</p>
+            @foreach ($comentarios->all() as $comentarios )
+                <div class="column div-noticia">
+                    <div class="row div-contenido" style="margin: 3px">
+                        @if ($comentarios -> id_foto == $idfoto)
+                            <div class="row div-contenido">
+                                <div class="col align-content-start" style="width: 100%">
+                                        <p>{{$comentarios-> comentario}}</p>
+                                </div>
                             </div>
-                            <div class="col">
-                                <p>Calificacion: {{$comentario-> clasificacion}}/10</p>
+                            <div class="row div-contenido">
+                                <div class="col text-left" style="width: 100%">
+                                    <p>Calificacion: {{$comentarios-> clasificacion}}/10</p>
+                                </div>
                             </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </form>
-        {{--  <div class="card body">
-            <div class="card-title">
-                @foreach ($comentarios as $comentarios)
-                    <div class="row">
-                        <p>{{$comentarios -> comentario}}</p>
+                            @php
+                                $val = true; 
+                            @endphp
+                        @endif
                     </div>
-                @endforeach
-            </div>
-        </div>  --}}
+                </div>
+            @endforeach
+            @if ($val == false)
+                <div class="row div-noticia">
+                    <div class="col div-contenido">
+                        <p>No existen comentarios para esta fotografia</p>
+                    </div>
+                </div>
+            @endif
+        </form>
     </div>
 </div>
 @endsection

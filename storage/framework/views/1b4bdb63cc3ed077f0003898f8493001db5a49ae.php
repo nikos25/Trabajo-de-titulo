@@ -1,7 +1,7 @@
 
 <?php $__env->startSection('contenido-principal'); ?>
 <?php
-
+    $val = false;
 ?>
 <div class="row">
     <div class="col d-flex">
@@ -40,22 +40,35 @@
                 </div>
                 <button type="submit" class="btn btn-dark"><i class="fas fa-comment"></i>  Comentar</button>
             </div>
-            <div class="column div-noticia">
-                <div class="row div-contenido">
-                    <?php $__currentLoopData = $comentario->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $comentario): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="row div-contenido">
-                            <div class="col">
-                                <p><?php echo e($comentario-> comentario); ?></p>
+            <?php $__currentLoopData = $comentarios->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $comentarios): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="column div-noticia">
+                    <div class="row div-contenido" style="margin: 3px">
+                        <?php if($comentarios -> id_foto == $idfoto): ?>
+                            <div class="row div-contenido">
+                                <div class="col align-content-start" style="width: 100%">
+                                        <p><?php echo e($comentarios-> comentario); ?></p>
+                                </div>
                             </div>
-                            <div class="col">
-                                <p>Calificacion: <?php echo e($comentario-> clasificacion); ?>/10</p>
+                            <div class="row div-contenido">
+                                <div class="col text-left" style="width: 100%">
+                                    <p>Calificacion: <?php echo e($comentarios-> clasificacion); ?>/10</p>
+                                </div>
                             </div>
-                        </div>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <?php
+                                $val = true; 
+                            ?>
+                        <?php endif; ?>
+                    </div>
                 </div>
-            </div>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            <?php if($val == false): ?>
+                <div class="row div-noticia">
+                    <div class="col div-contenido">
+                        <p>No existen comentarios para esta fotografia</p>
+                    </div>
+                </div>
+            <?php endif; ?>
         </form>
-        
     </div>
 </div>
 <?php $__env->stopSection(); ?>
